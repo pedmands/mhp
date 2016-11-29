@@ -1,0 +1,16 @@
+@import "front_page";
+@import "music-for-film";
+@import "music-for-commercials";
+@import "sound-design";
+@import 'radio-production';
+@import 'contact';
+@import 'about';
+
+.roles {
+  font-family: "Montserrat",sans-serif;
+font-weight: 800;
+color: #666666;
+margin-bottom: 10px;
+li.nobullet:after {content:none !important;}
+li.nobullet {margin-right:15px;}
+}

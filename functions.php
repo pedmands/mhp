@@ -45,6 +45,9 @@ function mhp_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'mhp' ),
+		'secondary' => esc_html__( 'Secondary', 'mhp' ),
+		'footer' => esc_html__( 'Footer', 'mhp' ),
+		'frontpage' => esc_html__( 'Front Page Buttons', 'mhp' ),
 	) );
 
 	/*
@@ -58,6 +61,33 @@ function mhp_setup() {
 		'gallery',
 		'caption',
 	) );
+
+	// Custom Options page
+	if( function_exists('acf_add_options_page') ) {
+
+		acf_add_options_page(array(
+			'page_title' 	=> 'General Theme Settings',
+			'menu_title'	=> 'Theme Settings',
+			'menu_slug' 	=> 'theme-general-settings',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false,
+			'icon_url' => 'dashicons-visibility',
+			'position' => 2
+		));
+
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Landing Page Settings',
+			'menu_title'	=> 'Landing Page',
+			'parent_slug'	=> 'theme-general-settings',
+		));
+
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Footer Settings',
+			'menu_title'	=> 'Footer',
+			'parent_slug'	=> 'theme-general-settings',
+		));
+	}
+
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'mhp_custom_background_args', array(
@@ -102,9 +132,17 @@ add_action( 'widgets_init', 'mhp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function mhp_scripts() {
+	wp_enqueue_style('mhp-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+
 	wp_enqueue_style( 'mhp-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'mhp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script('jQuery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js');
+
+	wp_enqueue_script( 'mhp_-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jQuery'));
+
+	wp_enqueue_script( 'mhp-scripts', get_template_directory_uri() . '/js/custom-scripts.js', array('jQuery'));
 
 	wp_enqueue_script( 'mhp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

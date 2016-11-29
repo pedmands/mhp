@@ -1,0 +1,180 @@
+.sd {
+  .mejs-container {
+    width:300px !important;
+    @media screen and (max-width: $bp-tablet + 1){
+      width:250px !important;
+    }
+  }
+  .mejs-container,
+  .mejs-embed,
+  .mejs-embed body,
+  .mejs-container .mejs-controls {
+    background: white !important;
+    .mejs-time {
+      color: $gray3 !important;
+    }
+    .mejs-button {
+      button {
+        background-color: $gray3;
+        padding: 5px;
+        box-shadow: none;
+        @media screen and (max-width: $bp-tablet + 1){
+          transform: scale(1.5);
+        }
+      }
+    }// .mejs-button
+    @media screen and (max-width: $bp-tablet + 1){
+      .mejs-volume-button,.mejs-horizontal-volume-total, .mejs-horizontal-volume-current, {
+        display: none;
+      }
+    }
+    .mejs-time-rail {
+      .mejs-time-total {
+        background: $gray5;
+      }
+      .mejs-time-current {
+        background: $red;
+      }
+      .mejs-time-buffering,
+      .mejs-time-loaded {background:$gray6;}
+    }// .mejs-time-rail
+    .mejs-horizontal-volume-total {
+      background: $gray6;
+    }
+    .mejs-horizontal-volume-current {
+      background: $gray4;
+    }
+  }// .mejs-container .mejs-controls
+  .page-title {
+    margin-bottom: 10px;
+  }
+  .reel {
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+    padding: 10px 0;
+    iframe {
+      width:span(9);
+      height: 400px;
+      @include respond-to(phone){
+        width: 95%;
+        height:180px;
+      }
+      @include respond-to(tablet){
+        width: 95%;
+        height: 280px;
+      }
+    }
+  }
+  .sd-examples {
+    width: 100%;
+    margin: 0 auto;
+    list-style-type: none;
+    .sd-example {
+      position: relative;
+      width: span(9);
+      overflow: hidden;
+      margin: 0 auto;
+      border-top: 1px solid $gray6;
+      padding: 20px 0;
+      @include respond-to(phone){
+        padding: 10px 0;
+      }
+      @media screen and (max-width: $bp-tablet){
+        width:95%;
+      }
+      .thumb {
+        position: absolute;
+        left: 0;
+        vertical-align: middle;
+        width: 100px;
+        display: inline-block;
+        // @include respond-to(phone){
+        //   position: relative;
+        //   display:block;
+        //   width:100%;
+        // }
+        .img-wrap {
+          position: relative;
+          height: 100px;
+          overflow: hidden;
+          @include respond-to(phone){
+            height:70px;
+            width:70px;
+            display: inline-block;
+          }
+          img {
+            border: 1px solid $gray5;
+            position: absolute;
+            @include respond-to(phone){
+              max-width: 100%;
+              &.top {top:0; left: 50%; transform: translateX(-50%);}
+              &.center {top:50%; left: 50%; transform: translate(-50%, -50%);}
+              &.bottom {bottom:0; left: 50%; transform: translateX(-50%);}
+            }
+            @media screen and (min-width: $bp-phone + 1){
+              &.top {top:0; left: 50%; transform: translateX(-50%);}
+              &.center {top:50%; left: 50%; transform: translate(-50%, -50%);}
+              &.bottom {bottom:0; left: 50%; transform: translateX(-50%);}
+            }
+          }// img
+        }// img-wrap
+
+      }// .thumb
+      .content {
+        margin-left: 110px;
+        vertical-align: top;
+        display: inline-block;
+        @include respond-to(phone){
+          margin-left:80px;
+        }
+        @media screen and (min-width: $bp-phone + 1){
+          min-height: 100px;
+        }
+        .ex-title {
+          display: inline-block;
+          margin: 0;
+
+        }// .ex-title
+        .subtitle {
+          display: inline-block;
+          margin: 0 5px;
+          color: $gray2;
+          @include respond-to(phone) {
+            font-size: 12px;
+            margin: 0;
+          }
+        }// .sub-title
+        .roles {
+          list-style-type: none;
+          margin-left: 0;
+          font-size: 16px;
+          @include respond-to(phone) {
+            letter-spacing: -0.5px;
+          }
+          li {
+            display: inline-block;
+            &:after {
+              content: '•';
+              margin: 0 5px;
+              color: $gray4;
+            }
+            &:last-child {
+              &:after {
+                content: '';
+              }
+            }
+          }// li
+          li.nobullet:after {content:none;}
+          li.nobullet{margin-right:15px;}
+        }// .roles
+        .awards-lg {
+          font-size:14px;
+          font-style: italic;
+          line-height: 1.1 !important;
+          margin:0;
+        }
+      }// .content
+    }// .sd-example
+  }// .sd-examples
+}// .sd

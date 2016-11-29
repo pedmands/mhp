@@ -15,8 +15,21 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<?php if(is_front_page() && !is_paged()) { ?>
+			<section id="welcome">
+				<div class="intro-wrap">
+					<div class="intro-blurb">
+						Blah blah blah...
+					</div>
+				</div><!-- intro-wrap -->
+				<div class="work-wrap">
+					<?php wp_nav_menu( array( 'theme_location' => 'frontpage', 'menu_id' => 'frontpage-menu', 'menu_class' => 'frontpage-menu' ) ); ?>
+				</div><!-- work-wrap -->
+			</section><!-- #welcome -->
+		<?php } ?>
 
+		<main id="main" class="site-main" role="main">
+		<h1 class="section-title">The Latest</h1>
 		<?php
 		if ( have_posts() ) :
 

@@ -1,82 +1,222 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-
+	width:100%;
+	position: relative;
+	z-index:100;
+	@include clearfix;
 	ul {
+		cursor:pointer;
+		list-style-type: none;
+		margin-left: 0;
+		font-family: "Montserrat", sans-serif;
 		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
+		z-index: 100;
+		.menu-item-has-children { // Dropdown Icon
+			position: relative;
+			&:after {
+				position: absolute;
+				top: 23px;
+				right: 20px;
+				font-family: "FontAwesome";
+				content: "\f078";
+				color: $gray3;
+				font-size: 14px;
+			}
+		}// ul menu-item-has-children
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
+			z-index: 100;
+			min-width:250px;
+			background: $gray7;
+			@media screen and (min-width: $bp-tablet +1){
+				float: left;
+				position: absolute;
+				top: 100%;
+				left: -999em;
+				z-index: 99999;
+			}
+			.menu-item-has-children {   // Sub-Menu Icon
+				position: relative;
+				&:after {
+					position: absolute;
+					top: 30px;
+					right: 10px;
+					transform: translateY(-50%);
+					font-family: "FontAwesome";
+					content: "\f054";
+					color: $gray3;
+					font-size: 14px;
+				}
+			}// ul ul menu-item-has-children
 			ul {
+				transition: all .3s ease-out;
 				left: -999em;
 				top: 0;
-			}
+				background: $gray6;
+				@media screen and (min-width: $bp-tablet){
+					a:hover,
+					a.focus {
+						background: $gray5;
+					}
+				}
+			}// ul ul ul
 
 			li {
+				width:100%;
 				&:hover > ul,
 				&.focus > ul {
+					transition: all .3s ease-out;
 					left: 100%;
 				}
-			}
+				@media screen and (max-width: $bp-tablet +1){
+					display: block;
+					width: 100%;
+					float: none;
+					background:$gray6;
+				}
+				a {
+					width: 100%;
+				}
+			}// ul ul li
 
-			a {
-				width: 200px;
+			@media screen and (min-width: $bp-tablet){
+				:hover > a,
+				.focus > a {
+					background: $gray6;
+				}
+				a:hover,
+				a.focus {
+					background: $gray6;
+				}
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
+		}//ul ul
 
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
 		}
-	}
+	}// ul
 
 	li {
 		float: left;
-		position: relative;
-
 		&:hover > a,
 		&.focus > a {
+			@media screen and (min-width: $bp-tablet){
+				background: $gray7;
+			}
+		}
+		@media screen and (max-width: $bp-tablet){
+			display: block;
+			width: 100%;
+			float: none;
+			@include clearfix;
+		}
+	}// ul li
+	.menu-item-has-children a {
+		@media screen and (min-width: $bp-tablet){
+			padding-right: 50px;
+		}
+	}
+	.menu-item-has-children li a {
+		padding-right: 30px;
+	}
+	a {                                     // The big-kahuna a ... master cascader
+		transition: all .3s ease-out;
+		display: block;
+		text-decoration: none;
+		color: black;
+		padding: 20px 18px;
+		&:hover {color:black;}
+		&:visited{color:black;}
+		@include respond-to(laptop){
+			font-size: 14px;
+		}
+		@media screen and (min-width: $bp-laptop + 1){
+			padding: 22.5px 30px;
 		}
 	}
 
-	a {
-		display: block;
-		text-decoration: none;
-	}
+}// .main-navigation
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
+
+.current_page_item > a,
+.current-menu-item > a,
+.current_page_ancestor > a,
+.current-menu-ancestor > a {
+					color: $red;
+					font-weight: bold;
+}
+@media screen and (min-width: $bp-tablet +1){
+	#primary-menu {
+		position: absolute;
+		bottom: 0;
+		left: span(3 wider of 12);
+	}
+}
+#secondary-menu {
+	a {
+		color: $gray3;
+	}
+	@media screen and (min-width: $bp-tablet + 1){
+		position: absolute;
+		bottom:0;
+		right: 0;
+	font-weight: light;
 	}
 }
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation.toggled ul{
 	display: block;
 }
+.main-navigation.toggled ul ul li {
+	margin-left: 15px;
+}
+.main-navigation.toggled {
+	background: $gray7;
+	margin-bottom: 15px;
+	#secondary-menu {
+		background: white;
+	}
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.menu-toggle {
+	position: fixed;
+	top: 5px;
+	right: 15px;
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	text-shadow: none;
+	padding: 0;
+	z-index:52;
+	&:hover {
+		i{
+			color:$red;
+		}
 
-@media screen and (min-width: 37.5em) {
+	}
+	i {
+		transition: all .3s ease-in-out;
+		font-size: 38px;
+		color: $gray6;
+		text-shadow: 1px 1px 0 $gray4;
+	}
+	&:after {
+		content: 'MENU';
+		margin-top:3px;
+		display: block;
+		font-weight: 600;
+		color: $gray4;
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: $bp-tablet) {
 	.menu-toggle {
 		display: none;
 	}
@@ -84,24 +224,73 @@
 		display: block;
 	}
 }
+.single-post-nav {
+	border-top: 1px solid $gray6;
+	background: #f7f7f7;
+	width:100%;
+	margin: 0 auto;
+	display: block;
+	@media screen and (max-width:$bp-tablet+1){padding: 0;}
+	@include respond-to(tablet){padding:15px !important;}
+	@include clearfix;
+	color: $gray4;
+	a {color:$gray3;font-style: italic;&:hover{color:$gray3;text-decoration: none;}&:visited{color:$gray3;}}
+	.prev-post {
+		float: left;
+		width:50%;
+		padding: 30px;
+		@include respond-to(phone){display: block;padding: 30px 0;width:90%; float:none;margin:0 auto;text-align: center;}
+
+	}
+	.next-post {
+		float: right;
+		width:50%;
+		text-align: right;
+		padding: 30px;
+		border-left:1px solid $gray6;
+		@include respond-to(phone){display: block;padding: 30px 0;width:90%; float:none;margin:0 auto;text-align: center; border-left:none;border-top:1px solid $gray6;}
+
+	}
+}// .single-post-nav
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
+	width: 90%;
+	margin: 0 auto;
+	.nav-links {
+		border-top: 1px solid $gray6;
+		padding: 30px 0;
+		width: 100%;
+		@include clearfix;
+		a {
+			text-transform: uppercase;
+			text-decoration: none;
+			&:hover {
+	      text-decoration: underline;
+				color:$gray3;
+	    }
+		}
+	}
 	.site-main & {
-		margin: 0 0 1.5em;
 		overflow: hidden;
 	}
 
+	.nav-previous,
+	.nav-next {
+		a {
+			color: $gray3;
+		}
+	}
 	.nav-previous {
 		float: left;
-		width: 50%;
-	}
+		width:50%;
 
+	}
 	.nav-next {
 		float: right;
 		text-align: right;
-		width: 50%;
+		width:50%;
+
 	}
 }

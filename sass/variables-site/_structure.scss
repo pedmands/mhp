@@ -1,2 +1,16 @@
+@import "../../bower_components/susy/sass/susy";
+$susy: (
+columns: 12,
+global-box-sizing: border-box,
+gutter-position: split,
+);
+@include border-box-sizing;
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+// breakpoints
+$bp-phone:420px;
+$bp-tablet:769px;
+$bp-laptop: 1024px;
+$bp-desktop:1440px;
+$bp-widescreen:1800px;

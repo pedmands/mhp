@@ -1,0 +1,167 @@
+.rp {
+  .intro{
+    width: span(9);
+    margin: 0 auto;
+    @include respond-to(phone){
+      font-size: 14px;
+    }
+    @media screen and (max-width: $bp-tablet){
+      width:95%;
+    }
+  }
+  .sc_fancy_player_container {
+    overflow: hidden;
+    @media screen and (max-width: $bp-phone+1){width:200px;}
+  }
+  .mejs-container {
+    width:340px !important;
+    @media screen and (max-width: $bp-phone + 1){
+      width:260px !important;
+    }
+  }
+  .mejs-container,
+  .mejs-embed,
+  .mejs-embed body,
+  .mejs-container .mejs-controls {
+    background: white !important;
+    .mejs-time {
+      color: $gray3 !important;
+    }
+    .mejs-button {
+      button {
+        background-color: $gray3;
+        padding: 5px;
+        box-shadow: none;
+        @media screen and (max-width: $bp-tablet + 1){
+          transform: scale(1.5);
+        }
+      }
+    }// .mejs-button
+    @media screen and (max-width: $bp-tablet + 1){
+      .mejs-volume-button,.mejs-horizontal-volume-total, .mejs-horizontal-volume-current, {
+        display: none;
+      }
+    }
+    .mejs-time-rail {
+      .mejs-time-total {
+        background: $gray5;
+      }
+
+      .mejs-time-buffering,
+      .mejs-time-loaded {background:$gray6;}
+    }// .mejs-time-rail
+    .mejs-horizontal-volume-total {
+      background: $gray6;
+    }
+    .mejs-horizontal-volume-current {
+      background: $gray4;
+    }
+  }// .mejs-container .mejs-controls
+  .page-title {
+    margin-bottom: 10px;
+  }
+  .sd-examples {
+    width: span(9);
+    margin: 0 auto;
+    list-style-type: none;
+    @media screen and (max-width: $bp-tablet){
+      width:95%;
+    }
+    .sd-example {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid $gray6;
+      padding:20px 0;
+      @include respond-to(phone){
+      padding: 10px 0;}
+      .thumb {
+        position: absolute;
+        left: 0;
+        vertical-align: middle;
+        width: 100px;
+        @include respond-to(phone){width:80px;}
+        display: inline-block;
+        .img-wrap {
+          @include respond-to(phone){ height:80px}
+          position: relative;
+          height: 100px;
+          border: 1px solid $gray6;
+          img {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 99%;
+            max-height: 118px;
+          }// img
+        }// img-wrap
+      }// .thumb
+      .content {
+        @include respond-to(phone){
+          margin-left:90px;
+          min-height:80px;
+        }
+        margin-left: 120px;
+        min-height: 100px;
+        vertical-align: top;
+        display: inline-block;
+        .ex-title {
+          display: inline-block;
+          margin: 0;
+          &:after {
+            content: '|';
+            margin-left: 10px;
+            color: $gray4;
+          }
+          @include respond-to(phone) {
+            font-size: 16px;
+            &:after {
+              margin-left: 5px;
+
+            }
+          }
+        }// .ex-title
+        .subtitle {
+          display: inline-block;
+          margin: 0 5px;
+          color: $gray2;
+          @include respond-to(phone) {
+            font-size: 14px;
+            margin: 0;
+          }
+        }// .sub-title
+        .roles {
+          list-style-type: none;
+          margin-left: 0;
+          font-size: 16px;
+          @include respond-to(phone) {
+            border-top: 1px solid $gray6;
+            padding-top:5px;
+            font-size: 16px;
+            // letter-spacing: -0.5px;
+          }
+          li {
+            display: inline-block;
+            &:after {
+              content: '•';
+              margin: 0 5px;
+              color: $gray4;
+              @include respond-to(phone) {
+                margin: 0 5px;
+              }
+            }
+            &:last-child {
+              &:after {
+                content: '';
+              }
+            }
+          }// li
+        }// .roles
+        .sample-title {
+          margin: 0;
+          font-weight: 400;
+        }
+      }// .content
+    }// .sd-example
+  }// .sd-examples
+}

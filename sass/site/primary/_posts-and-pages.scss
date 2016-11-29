@@ -1,11 +1,74 @@
 .sticky {
 	display: block;
 }
-
+.single-post {
+	@include respond-to(phone){
+		.post {width:95%;font-size: 14px;}
+	}
+	.entry-title {
+		margin-top:35px;
+	}
+	.feat-img-lg {
+		position: relative;
+		width:100%;
+		height:200px;
+		overflow: hidden;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}// .feat-img-lg
+}// .single-post
+.back {
+	display: block;
+	width:auto;
+	margin: 10px auto 30px auto;
+	text-align: center;
+	a {
+		color: $gray3;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+			color:$gray3;
+    }
+		&:visited{color:$gray3;}
+    &:before {
+      font-family: 'FontAwesome';
+      content: '\f104';
+      padding-right: 10px;
+    }
+	}// a
+}// .back
+.page-title {
+  width: span(10 of 11);
+  color: $gray1;
+  margin: 30px auto;
+	margin-top:35px;
+  font-size: 32px;
+  border-bottom: 1px solid $gray6;
+}
+.page {
+ .site-main {padding-bottom:40px;}
+}
 .hentry {
-	margin: 0 0 1.5em;
+	width: span(9); // this layout is defined in site/_global.scss
+	margin: 10px auto 20px;
+	@include clearfix;
 }
 
+.entry-title {
+	margin: 0;
+	a {
+		color: black;
+		text-decoration: none;
+		&:hover {color:black;text-decoration: underline;}
+		&:visited{color:black;}
+	}
+}
 .byline,
 .updated:not(.published){
 	display: none;
@@ -19,7 +82,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+
 }
 
 .page-links {
