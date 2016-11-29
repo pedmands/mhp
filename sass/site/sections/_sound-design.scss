@@ -134,18 +134,21 @@
         .ex-title {
           display: inline-block;
           margin: 0;
-
+          font-weight: 600;
         }// .ex-title
         .subtitle {
           display: inline-block;
           margin: 0 5px;
           color: $gray2;
+          font-weight: 400;
+          font-style: italic;
           @include respond-to(phone) {
             font-size: 12px;
             margin: 0;
           }
         }// .sub-title
         .roles {
+          font-weight: 400;
           list-style-type: none;
           margin-left: 0;
           font-size: 16px;
@@ -173,6 +176,7 @@
           font-style: italic;
           line-height: 1.1 !important;
           margin:0;
+          color: $gray4;
         }
       }// .content
     }// .sd-example

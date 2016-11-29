@@ -14,7 +14,7 @@
 			position: relative;
 			&:after {
 				position: absolute;
-				top: 23px;
+				top: 10px;
 				right: 20px;
 				font-family: "FontAwesome";
 				content: "\f078";
@@ -123,19 +123,12 @@
 		display: block;
 		text-decoration: none;
 		color: black;
-		padding: 20px 18px;
-		&:hover {color:black;}
-		&:visited{color:black;}
+		padding: 10px;
 		@include respond-to(laptop){
 			font-size: 14px;
 		}
-		@media screen and (min-width: $bp-laptop + 1){
-			padding: 22.5px 30px;
-		}
 	}
-
 }// .main-navigation
-
 
 .current_page_item > a,
 .current-menu-item > a,
@@ -148,12 +141,19 @@
 	#primary-menu {
 		position: absolute;
 		bottom: 0;
-		left: span(3 wider of 12);
+		left: 250px;
 	}
 }
 #secondary-menu {
 	a {
 		color: $gray3;
+	}
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+						color: $red;
+						font-weight: bold;
 	}
 	@media screen and (min-width: $bp-tablet + 1){
 		position: absolute;

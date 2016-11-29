@@ -13,13 +13,12 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mhp' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'mhp' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'mhp' ), 'mhp', '<a href="http://underscores.me/" rel="designer">Preston Edmands</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer id="colophon" class="site-footer" role="contentinfo" style="background-color:<?php the_field('footer_bg','options');?>;">
+			<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu', 'menu_class' => 'footer-menu' ) ); ?>
+			<div class="site-info">
+				
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

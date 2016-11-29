@@ -108,23 +108,14 @@
         .ex-title {
           display: inline-block;
           margin: 0;
-          &:after {
-            content: '|';
-            margin-left: 10px;
-            color: $gray4;
-          }
-          @include respond-to(phone) {
-            font-size: 16px;
-            &:after {
-              margin-left: 5px;
-
-            }
-          }
+          font-weight: 600;
         }// .ex-title
         .subtitle {
+          font-weight: 400;
+          font-style: italic;
           display: inline-block;
           margin: 0 5px;
-          color: $gray2;
+          color: $gray4;
           @include respond-to(phone) {
             font-size: 14px;
             margin: 0;

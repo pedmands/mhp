@@ -52,11 +52,7 @@
              echo '<li>' . $role . '</li>';
            }; ?>
            </ul>
- 					<style>
- 					.mejs-time-current {
- 		        background: <?php the_field('track_color','options'); ?> !important;
- 		      }
- 					</style>
+ 					
  					<?php if(have_rows('audio_samples')) {
  						while(have_rows('audio_samples')) : the_row();
  						echo "<h5 class='sample-title'>";

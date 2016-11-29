@@ -35,6 +35,7 @@
     text-transform: uppercase;
     font-size: 16px;
     color:white;
+    background: $red;
     @include respond-to(phone){
       width:100%;
       padding:20px;
