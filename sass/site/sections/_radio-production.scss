@@ -8,7 +8,7 @@
     @media screen and (max-width: $bp-tablet){
       width:95%;
     }
-  }
+  }// intro
   .sc_fancy_player_container {
     overflow: hidden;
     @media screen and (max-width: $bp-phone+1){width:200px;}
@@ -23,7 +23,7 @@
   .mejs-embed,
   .mejs-embed body,
   .mejs-container .mejs-controls {
-    background: white !important;
+    background: $gray7 !important;
     .mejs-time {
       color: $gray3 !important;
     }
@@ -124,13 +124,8 @@
         .roles {
           list-style-type: none;
           margin-left: 0;
-          font-size: 16px;
-          @include respond-to(phone) {
-            border-top: 1px solid $gray6;
-            padding-top:5px;
-            font-size: 16px;
-            // letter-spacing: -0.5px;
-          }
+          font-size: 14px;
+    
           li {
             display: inline-block;
             &:after {
@@ -148,8 +143,16 @@
             }
           }// li
         }// .roles
+        .radio-sample {
+          background: $gray7;
+          display: block;
+          width: 340px;
+          margin: 5px;
+        }
         .sample-title {
           margin: 0;
+          padding: 5px;
+          padding-bottom: 0;
           font-weight: 400;
         }
       }// .content

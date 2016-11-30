@@ -35,10 +35,10 @@
       text-align: left;
       .commercial-client{
         margin:0;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 400;
         @include respond-to(tablet){
-          font-size: 16px;
+          font-size: 12px;
         }
       }
       .commercial-title{
@@ -46,7 +46,7 @@
         font-size: 14px;
         color: $gray3;
         font-family: "raleway";
-        font-weight: 600;
+        font-weight: 400;
         @include respond-to(tablet){
           font-size: 12px;
         }

@@ -52,13 +52,15 @@
              echo '<li>' . $role . '</li>';
            }; ?>
            </ul>
- 					
+
  					<?php if(have_rows('audio_samples')) {
  						while(have_rows('audio_samples')) : the_row();
+            echo "<div class='radio-sample'>";
  						echo "<h5 class='sample-title'>";
  						echo the_sub_field('title');
  						echo "</h5>";
  						echo do_shortcode('[sc_embed_player_template1 fileurl="' . get_sub_field('audio_file') . '"]');
+            echo "</div>";
  					endwhile;
  					}
  				 ?>

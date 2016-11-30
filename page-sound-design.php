@@ -17,32 +17,15 @@
  <div id="primary" class="content-area">
 <main id="main" class="site-main sd" role="main">
 	<h1 class="page-title">Sound Design</h1>
-<div class="reel">
-	<?php $video = get_field('reel');
-	// get iframe HTML
-	$iframe = $video;
-	// use preg_match to find iframe src
-	preg_match('/src="(.+?)"/', $iframe, $matches);
-	$src = $matches[1];
-	// add extra params to iframe src
-	$params = array(
-			'controls'    => 0,
-			'hd'        => 1,
-			'autohide'    => 1,
-			'showinfo' => 0,
-			'modestbranding' => 1,
-			'rel' => 0,
-			'controls' => 2
-	);
-	$new_src = add_query_arg($params, $src);
-	$iframe = str_replace($src, $new_src, $iframe);
-	// add extra attributes to iframe html
-	$attributes = 'frameborder="0"';
-	$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-	// echo $iframe
-	echo $iframe;
-	?>
-</div>
+  <div class="intro">
+    <?
+      if (have_posts()):
+        while (have_posts()) : the_post();
+          the_content();
+        endwhile;
+      endif;
+    ?>
+  </div>
   <?php if( have_rows('sd_examples') ): ?>
   	<ul class="sd-examples">
   	<?php while( have_rows('sd_examples') ): the_row();

@@ -1,4 +1,14 @@
 .sd {
+  .intro{
+    width: span(9);
+    margin: 0 auto;
+    @include respond-to(phone){
+      font-size: 14px;
+    }
+    @media screen and (max-width: $bp-tablet){
+      width:95%;
+    }
+  }// intro
   .mejs-container {
     width:300px !important;
     @media screen and (max-width: $bp-tablet + 1){

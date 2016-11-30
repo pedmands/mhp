@@ -50,6 +50,9 @@
 	margin-top:35px;
   font-size: 32px;
   border-bottom: 1px solid $gray6;
+	@media screen and (max-width:$bp-tablet){
+		width:95%;
+	}
 }
 .page {
  .site-main {padding-bottom:40px;}

@@ -1,8 +1,7 @@
 .main-navigation {
-	width:100%;
-	position: relative;
 	z-index:100;
-	@include clearfix;
+	display: inline-block;
+	vertical-align: bottom;
 	ul {
 		cursor:pointer;
 		list-style-type: none;
@@ -123,7 +122,7 @@
 		display: block;
 		text-decoration: none;
 		color: black;
-		padding: 10px;
+		padding: 10px 20px;
 		@include respond-to(laptop){
 			font-size: 14px;
 		}
@@ -136,13 +135,6 @@
 .current-menu-ancestor > a {
 					color: $red;
 					font-weight: bold;
-}
-@media screen and (min-width: $bp-tablet +1){
-	#primary-menu {
-		position: absolute;
-		bottom: 0;
-		left: 250px;
-	}
 }
 #secondary-menu {
 	a {
@@ -256,7 +248,7 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-	width: 90%;
+	width: span(9 of 11);
 	margin: 0 auto;
 	.nav-links {
 		border-top: 1px solid $gray6;

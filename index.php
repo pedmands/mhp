@@ -19,7 +19,7 @@ get_header(); ?>
 			<section id="welcome">
 				<div class="intro-wrap">
 					<div class="intro-blurb">
-						Blah blah blah...
+						<?php the_field('intro_blurb', 'option');?>
 					</div>
 				</div><!-- intro-wrap -->
 				<div class="work-wrap">
@@ -29,7 +29,7 @@ get_header(); ?>
 		<?php } ?>
 
 		<main id="main" class="site-main" role="main">
-		<h1 class="section-title">The Latest</h1>
+		<h1 class="page-title">The Latest</h1>
 		<?php
 		if ( have_posts() ) :
 
@@ -53,7 +53,13 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			?>
+			<div class="post-navigation">
+					<div class="nav-links">
+				<div class="nav-next"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
+				<div class="nav-previous"><?php next_posts_link( '&laquo; Older Entries', '' ); ?></div>
+			</div>
+		</div><?php
 
 		else :
 

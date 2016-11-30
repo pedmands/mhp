@@ -31,7 +31,7 @@
  		<div class="entry-content">
  			<div class="media">
  				<?php if (get_sub_field('audio_or_video') === 'audio') {
-           echo do_shortcode($audio);
+           echo '<img src=' . get_sub_field('temp_img') . '>';
  				} else {
  					// get iframe HTML
  					$iframe = $video;
