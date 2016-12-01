@@ -21,11 +21,6 @@
  	<header class="entry-header">
  		<?php
  			echo '<h1 class="entry-title">' . $title . '</h1>';
- 			echo '<ul class="roles">';
- 				foreach($roles as $role){
- 					echo '<li>' . $role . '</li>';
- 				}
- 			echo '</ul>';
  		?>
  	</header><!-- .entry-header -->
  		<div class="entry-content">
@@ -60,7 +55,13 @@
  				?>
  			</div>
  			<div class="description">
- 				<?php echo $description; ?>
+ 				<?php
+        echo '<ul class="roles">';
+   				foreach($roles as $role){
+   					echo '<li>' . $role . '</li>';
+   				}
+   			echo '</ul>';
+        echo $description; ?>
  			</div><!-- .article-shifter -->
  		</div><!-- .entry-content -->
 
