@@ -27,9 +27,12 @@
         width:100%;
         text-align: center;
         color: black;
-        text-decoration: none;
+        text-decoration: underline;
         font-weight: normal;
         text-transform: uppercase;
+        &:hover {
+          text-decoration: none;
+        }
       }// a
     }// h1
     .site-description {

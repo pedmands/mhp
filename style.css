@@ -894,9 +894,11 @@ a {
         width: 100%;
         text-align: center;
         color: black;
-        text-decoration: none;
+        text-decoration: underline;
         font-weight: normal;
         text-transform: uppercase; }
+        .site-header .site-branding .site-title a:hover {
+          text-decoration: none; }
     .site-header .site-branding .site-description {
       margin: 0;
       line-height: 2;
