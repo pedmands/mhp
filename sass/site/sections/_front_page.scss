@@ -49,7 +49,7 @@
         width:100%;
       }
       @include respond-to(tablet){
-        width:85%;
+        width:95%;
       }
       @media screen and (min-width: $bp-tablet + 1){
         display: table;
@@ -78,13 +78,6 @@
           display: table-cell;
           width:20%;
         } // ^^== li ==vv
-        a {
-          &:hover{&:before{color:white;}}
-          @media screen and (max-width: $bp-laptop){
-            padding-top:63px;
-          }
-
-        }// a
       }// li
     }// ul
   }// .menu-front-page-container

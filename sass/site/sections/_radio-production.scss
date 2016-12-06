@@ -2,9 +2,6 @@
   .intro{
     width: span(9);
     margin: 0 auto;
-    @include respond-to(phone){
-      font-size: 14px;
-    }
     @media screen and (max-width: $bp-tablet){
       width:95%;
     }
@@ -61,7 +58,7 @@
     margin-bottom: 10px;
   }
   .sd-examples {
-    width: span(9);
+    width: 80%;
     margin: 0 auto;
     list-style-type: none;
     @media screen and (max-width: $bp-tablet){
@@ -70,10 +67,14 @@
     .sd-example {
       position: relative;
       overflow: hidden;
+      width: 80%;
+      margin: 0 auto;
       border-top: 1px solid $gray6;
       padding:20px 0;
       @include respond-to(phone){
-      padding: 10px 0;}
+      padding: 10px 0;
+      width:100%;
+      }
       .thumb {
         position: absolute;
         left: 0;
@@ -115,7 +116,7 @@
           font-style: italic;
           display: inline-block;
           margin: 0 5px;
-          color: $gray4;
+          color: $gray3;
           @include respond-to(phone) {
             font-size: 14px;
             margin: 0;
@@ -125,7 +126,7 @@
           list-style-type: none;
           margin-left: 0;
           font-size: 14px;
-    
+          font-weight: 600;
           li {
             display: inline-block;
             &:after {

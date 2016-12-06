@@ -250,6 +250,9 @@
 .post-navigation {
 	width: span(9 of 11);
 	margin: 0 auto;
+	@media screen and (max-width: $bp-tablet){
+		width:90%;
+	}
 	.nav-links {
 		border-top: 1px solid $gray6;
 		padding: 30px 0;

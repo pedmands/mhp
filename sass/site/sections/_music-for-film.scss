@@ -24,11 +24,9 @@
   }
   .roles {
     margin-left: 0;
-    font-size: 16px;
     list-style-type: none;
-    @include respond-to(phone){
-      font-size: 14px;
-    }
+    font-weight: 600;
+    margin-bottom: 10px;
     li {
       display: inline-block;
       &:after {
@@ -80,16 +78,19 @@
       vertical-align: top;
       margin-left:5%;
       width: 60%;
+      @include respond-to(phone){
+        margin-left: 0;
+      }
+      @include respond-to(tablet){
+        width: 50%;
+        margin-left: 2%;
+      }
       @include respond-to(laptop){
         width:55%;
         margin-left: 2%;
       }
       @include respond-to(desktop){
         width:55%;
-        margin-left: 2%;
-      }
-      @include respond-to(tablet){
-        width: 50%;
         margin-left: 2%;
       }
       p {
@@ -109,10 +110,4 @@
       }
     }// .description
   }// .entry-content
-  .roles {
-    font-family: "Montserrat",sans-serif;
-    font-weight: 800;
-    color:$gray2;
-    margin-bottom: 10px;
-  }
 }// .mff

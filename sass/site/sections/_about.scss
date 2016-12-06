@@ -1,24 +1,22 @@
 .about {
   .hentry {
+    p:first-child {
+      margin: 0;
+    }
     @media screen and (max-width: $bp-tablet + 1){
       width:95%;
+    }// @media max-width: $bp-tablet + 1
+    @media screen and (max-width:600px) {
+      .alignleft {
+        float:none;
+        display:block;
+        width:100%;
+        margin: 0 auto;}
     }
-  }
-  .entry-content {
-    @include respond-to(tablet){
-      font-size: 14px;
-    }
-    @media screen and (min-width: $bp-phone + 1){
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      -ms-column-count: 2;
-      -o-column-count: 2;
-      column-count: 2;
-      -webkit-column-gap: 20px;
-      -moz-column-gap: 20px;
-      -ms-column-gap: 20px;
-      -o-column-gap: 20px;
-      column-gap: 20px;
+    @media screen and (min-width: 601px){
+      p:nth-child(2) {
+        margin-top: 0;
+      }
     }
   }// .entry-content
   .about-pic {

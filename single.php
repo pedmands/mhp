@@ -17,12 +17,16 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
-			the_post_navigation();
-
-
-		endwhile; // End of the loop.
-		?>
-
+			?>
+			<div class="single-post-nav">
+				<div class="prev-post">
+					<?php previous_post_link(); ?>
+				</div>
+				<div class="next-post">
+					<?php next_post_link(); ?>
+				</div>
+			</div><!-- single-post-nav -->
+		<?php endwhile; // End of the loop. ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

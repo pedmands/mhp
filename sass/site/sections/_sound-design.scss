@@ -2,9 +2,6 @@
   .intro{
     width: span(9);
     margin: 0 auto;
-    @include respond-to(phone){
-      font-size: 14px;
-    }
     @media screen and (max-width: $bp-tablet){
       width:95%;
     }
@@ -77,21 +74,22 @@
     }
   }
   .sd-examples {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     list-style-type: none;
+    @include respond-to(phone){
+      width:100%;
+    }
     .sd-example {
       position: relative;
-      width: span(9);
+      width: 80%;
       overflow: hidden;
       margin: 0 auto;
       border-top: 1px solid $gray6;
       padding: 20px 0;
-      @include respond-to(phone){
-        padding: 10px 0;
-      }
       @media screen and (max-width: $bp-tablet){
         width:95%;
+        padding: 10px 0;
       }
       .thumb {
         position: absolute;
@@ -158,10 +156,10 @@
           }
         }// .sub-title
         .roles {
-          font-weight: 400;
+          font-weight: 600;
           list-style-type: none;
           margin-left: 0;
-          font-size: 16px;
+          font-size: 14px;
           @include respond-to(phone) {
             letter-spacing: -0.5px;
           }
@@ -186,7 +184,10 @@
           font-style: italic;
           line-height: 1.1 !important;
           margin:0;
-          color: $gray4;
+          color: $gray3;
+          @media screen and (max-width: $bp-phone+1){
+            font-size: 12px;
+          }
         }
       }// .content
     }// .sd-example

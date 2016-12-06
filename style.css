@@ -670,6 +670,11 @@ a {
 .post-navigation {
   width: 80%;
   margin: 0 auto; }
+  @media screen and (max-width: 769px) {
+    .comment-navigation,
+    .posts-navigation,
+    .post-navigation {
+      width: 90%; } }
   .comment-navigation .nav-links,
   .posts-navigation .nav-links,
   .post-navigation .nav-links {
@@ -720,12 +725,26 @@ a {
   text-align: center;
   width: 100%;
   height: 100px;
+  font-size: 16px;
+  line-height: 1.25;
   color: white;
   font-weight: 300;
   padding: 10px;
-  padding-top: 40px;
   text-decoration: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.45); }
+  @media only screen and (max-width: 420px) {
+    #frontpage-menu li a {
+      padding-top: 30px; } }
+  @media only screen and (min-width: 421px) and (max-width: 769px) {
+    #frontpage-menu li a {
+      padding-top: 40px;
+      font-size: 14px; } }
+  @media only screen and (min-width: 770px) and (max-width: 1024px) {
+    #frontpage-menu li a {
+      padding-top: 30px; } }
+  @media screen and (min-width: 1025px) {
+    #frontpage-menu li a {
+      padding-top: 40px; } }
 
 #frontpage-menu li a:hover {
   color: white;
@@ -1012,7 +1031,7 @@ a {
           width: 100%; } }
       @media only screen and (min-width: 421px) and (max-width: 769px) {
         #welcome .work-wrap ul {
-          width: 85%; } }
+          width: 95%; } }
       @media screen and (min-width: 770px) {
         #welcome .work-wrap ul {
           display: table;
@@ -1038,11 +1057,6 @@ a {
           #welcome .work-wrap ul li {
             display: table-cell;
             width: 20%; } }
-        #welcome .work-wrap ul li a:hover:before {
-          color: white; }
-        @media screen and (max-width: 1024px) {
-          #welcome .work-wrap ul li a {
-            padding-top: 63px; } }
 
 body.paged main.front-page article:first-of-type {
   width: 80% !important; }
@@ -1138,11 +1152,9 @@ main.front-page article {
   font-size: 24px; }
 .mff .roles {
   margin-left: 0;
-  font-size: 16px;
-  list-style-type: none; }
-  @media only screen and (max-width: 420px) {
-    .mff .roles {
-      font-size: 14px; } }
+  list-style-type: none;
+  font-weight: 600;
+  margin-bottom: 10px; }
   .mff .roles li {
     display: inline-block; }
     .mff .roles li:after {
@@ -1183,6 +1195,13 @@ main.front-page article {
   vertical-align: top;
   margin-left: 5%;
   width: 60%; }
+  @media only screen and (max-width: 420px) {
+    .mff .entry-content .description {
+      margin-left: 0; } }
+  @media only screen and (min-width: 421px) and (max-width: 769px) {
+    .mff .entry-content .description {
+      width: 50%;
+      margin-left: 2%; } }
   @media only screen and (min-width: 770px) and (max-width: 1024px) {
     .mff .entry-content .description {
       width: 55%;
@@ -1190,10 +1209,6 @@ main.front-page article {
   @media only screen and (min-width: 1025px) and (max-width: 1440px) {
     .mff .entry-content .description {
       width: 55%;
-      margin-left: 2%; } }
-  @media only screen and (min-width: 421px) and (max-width: 769px) {
-    .mff .entry-content .description {
-      width: 50%;
       margin-left: 2%; } }
   .mff .entry-content .description p {
     margin: 0; }
@@ -1208,11 +1223,6 @@ main.front-page article {
   @media only screen and (min-width: 421px) and (max-width: 769px) {
     .mff .entry-content .description {
       width: 48%; } }
-.mff .roles {
-  font-family: "Montserrat",sans-serif;
-  font-weight: 800;
-  color: #666666;
-  margin-bottom: 10px; }
 
 .commercials-wrap {
   width: 95%;
@@ -1269,9 +1279,6 @@ main.front-page article {
 .sd .intro {
   width: 80%;
   margin: 0 auto; }
-  @media only screen and (max-width: 420px) {
-    .sd .intro {
-      font-size: 14px; } }
   @media screen and (max-width: 769px) {
     .sd .intro {
       width: 95%; } }
@@ -1363,9 +1370,12 @@ main.front-page article {
         width: 95%;
         height: 280px; } }
 .sd .sd-examples {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   list-style-type: none; }
+  @media only screen and (max-width: 420px) {
+    .sd .sd-examples {
+      width: 100%; } }
   .sd .sd-examples .sd-example {
     position: relative;
     width: 80%;
@@ -1373,12 +1383,10 @@ main.front-page article {
     margin: 0 auto;
     border-top: 1px solid #dddddd;
     padding: 20px 0; }
-    @media only screen and (max-width: 420px) {
-      .sd .sd-examples .sd-example {
-        padding: 10px 0; } }
     @media screen and (max-width: 769px) {
       .sd .sd-examples .sd-example {
-        width: 95%; } }
+        width: 95%;
+        padding: 10px 0; } }
     .sd .sd-examples .sd-example .thumb {
       position: absolute;
       left: 0;
@@ -1450,10 +1458,10 @@ main.front-page article {
             font-size: 12px;
             margin: 0; } }
       .sd .sd-examples .sd-example .content .roles {
-        font-weight: 400;
+        font-weight: 600;
         list-style-type: none;
         margin-left: 0;
-        font-size: 16px; }
+        font-size: 14px; }
         @media only screen and (max-width: 420px) {
           .sd .sd-examples .sd-example .content .roles {
             letter-spacing: -0.5px; } }
@@ -1474,14 +1482,14 @@ main.front-page article {
         font-style: italic;
         line-height: 1.1 !important;
         margin: 0;
-        color: #bbbbbb; }
+        color: #999999; }
+        @media screen and (max-width: 421px) {
+          .sd .sd-examples .sd-example .content .awards-lg {
+            font-size: 12px; } }
 
 .rp .intro {
   width: 80%;
   margin: 0 auto; }
-  @media only screen and (max-width: 420px) {
-    .rp .intro {
-      font-size: 14px; } }
   @media screen and (max-width: 769px) {
     .rp .intro {
       width: 95%; } }
@@ -1566,11 +1574,14 @@ main.front-page article {
   .rp .sd-examples .sd-example {
     position: relative;
     overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
     border-top: 1px solid #dddddd;
     padding: 20px 0; }
     @media only screen and (max-width: 420px) {
       .rp .sd-examples .sd-example {
-        padding: 10px 0; } }
+        padding: 10px 0;
+        width: 100%; } }
     .rp .sd-examples .sd-example .thumb {
       position: absolute;
       left: 0;
@@ -1612,7 +1623,7 @@ main.front-page article {
         font-style: italic;
         display: inline-block;
         margin: 0 5px;
-        color: #bbbbbb; }
+        color: #999999; }
         @media only screen and (max-width: 420px) {
           .rp .sd-examples .sd-example .content .subtitle {
             font-size: 14px;
@@ -1620,7 +1631,8 @@ main.front-page article {
       .rp .sd-examples .sd-example .content .roles {
         list-style-type: none;
         margin-left: 0;
-        font-size: 14px; }
+        font-size: 14px;
+        font-weight: 600; }
         .rp .sd-examples .sd-example .content .roles li {
           display: inline-block; }
           .rp .sd-examples .sd-example .content .roles li:after {
@@ -1687,31 +1699,27 @@ main.front-page article {
       margin-left: 10%;
       padding: 20px; } }
 
+.about .hentry p:first-child {
+  margin: 0; }
 @media screen and (max-width: 770px) {
   .about .hentry {
     width: 95%; } }
-@media only screen and (min-width: 421px) and (max-width: 769px) {
-  .about .entry-content {
-    font-size: 14px; } }
-@media screen and (min-width: 421px) {
-  .about .entry-content {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    -ms-column-count: 2;
-    -o-column-count: 2;
-    column-count: 2;
-    -webkit-column-gap: 20px;
-    -moz-column-gap: 20px;
-    -ms-column-gap: 20px;
-    -o-column-gap: 20px;
-    column-gap: 20px; } }
+@media screen and (max-width: 600px) {
+  .about .hentry .alignleft {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 0 auto; } }
+@media screen and (min-width: 601px) {
+  .about .hentry p:nth-child(2) {
+    margin-top: 0; } }
 .about .about-pic {
   display: block; }
 
 .roles {
   font-weight: 400;
   color: black;
-  margin: 10px; }
+  margin: 7px; }
   .roles li.nobullet:after {
     content: none !important; }
   .roles li.nobullet {
@@ -1766,7 +1774,8 @@ main.front-page article {
   border-bottom: 1px solid #dddddd; }
   @media screen and (max-width: 769px) {
     .page-title {
-      width: 95%; } }
+      width: 95%;
+      font-size: 26px; } }
 
 .page .site-main {
   padding-bottom: 40px; }
@@ -1777,6 +1786,9 @@ main.front-page article {
   content: "";
   display: table;
   table-layout: fixed; }
+  @media screen and (max-width: 769px) {
+    .hentry {
+      width: 90%; } }
 
 .entry-title {
   margin: 0; }

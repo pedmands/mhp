@@ -16,13 +16,49 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<?php if(is_front_page() && !is_paged()) { ?>
-			<section id="welcome">
+			<?php if(get_field('add_bg_img','options')){ ?>
+	<style>
+	#welcome {
+		background-image:url(<?php the_field('bg_img','options');?>);
+		background-attachment: scroll;
+		background-repeat:<?php the_field('repeat','options');?>;
+		background-position:<?php the_field('position','options');?>;
+	}
+	</style>
+	<?php } ?>
+			<section id="welcome"
+			style="
+			background-color:<?php the_field('landing_bgc','options');?>;
+			">
 				<div class="intro-wrap">
-					<div class="intro-blurb">
+					<?php
+					$hexColor = get_field('blurb_bg','options');
+					$rgbColor = hex2rgb($hexColor);
+					$finalColor = implode(", ", $rgbColor);
+					if (get_field('add_blurb_bg','options')){ ?>
+					<style>
+					.intro-blurb {
+						background-color:rgba( <?php echo $finalColor;?>, <?php the_field('blurb_bg_opacity','options');?>);
+						<?php if(get_field('blurb_border','options')){?>
+						border-top: 3px solid rgba(255,255,255,.15);
+						border-left: 3px solid rgba(255,255,255,.15);
+						border-bottom: 3px solid rgba(0,0,0,.3);
+						border-right: 3px solid rgba(0,0,0,.3);
+						<?php } ?>
+					}
+					</style>
+					<?php } ?>
+
+					<div class="intro-blurb" style="color:<?php the_field('blurb_color','options');?>;">
 						<?php the_field('intro_blurb', 'option');?>
 					</div>
 				</div><!-- intro-wrap -->
 				<div class="work-wrap">
+				<style>
+			#frontpage-menu li a {
+				background-color: <?php the_field('button_bg','options'); ?>;
+				color: <?php the_field('button_color','options'); ?>;
+			</style>
 					<?php wp_nav_menu( array( 'theme_location' => 'frontpage', 'menu_id' => 'frontpage-menu', 'menu_class' => 'frontpage-menu' ) ); ?>
 				</div><!-- work-wrap -->
 			</section><!-- #welcome -->
