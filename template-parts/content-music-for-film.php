@@ -19,15 +19,16 @@
  		?>
  <article id="post-<?php the_ID(); ?>" class="hentry mff">
  	<header class="entry-header">
- 		<?php
- 			echo '<h1 class="entry-title">' . $title . '</h1>';
- 		?>
+    <?php echo '<h1 class="entry-title">' . $title . '</h1>'; ?>
  	</header><!-- .entry-header -->
  		<div class="entry-content">
  			<div class="media">
- 				<?php if (get_sub_field('audio_or_video') === 'audio') {
-           echo '<img src=' . get_sub_field('temp_img') . '>';
- 				} else {
+ 				<?php
+        if ($title === 'Serial'){
+          echo '<div class="serial-player"></div>';
+        } else if ($title === 'Strays') {
+          echo '<div class="strays-player"></div>';
+        } else {
  					// get iframe HTML
  					$iframe = $video;
  					// use preg_match to find iframe src
@@ -55,17 +56,22 @@
  				?>
  			</div>
  			<div class="description">
- 				<?php
-        echo '<ul class="roles">';
-   				foreach($roles as $role){
-   					echo '<li>' . $role . '</li>';
-   				}
-   			echo '</ul>';
-        echo $description; ?>
+        <?php
+
+          echo '<ul class="roles">';
+            foreach($roles as $role){
+              echo '<li>' . $role . '</li>';
+            }
+          echo '</ul>';
+     		?>
+ 				<?php echo $description; ?>
  			</div><!-- .article-shifter -->
  		</div><!-- .entry-content -->
 
-
+    <script>document.addEventListener("DOMContentLoaded", function(event) {
+      window.renderSerial(document.querySelector('.serial-player'));
+      window.renderStrays(document.querySelector('.strays-player'));
+    });</script>
  </article><!-- #post-## -->
  <?php endwhile; ?>
  <?php endif; ?>
