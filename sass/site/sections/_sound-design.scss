@@ -115,6 +115,7 @@
           }
         }// .sub-title
         .roles {
+          color: $gray2;
           display:flex;
           flex-wrap: wrap;
           justify-content: flex-start;
@@ -122,15 +123,16 @@
           font-weight: 600;
           list-style-type: none;
           margin-left: 0;
-          font-size: 14px;
+          font-size: 16px;
           @include respond-to(phone) {
             letter-spacing: -0.5px;
           }
           li {
             &:after {
-              content: '•';
+              content: '/';
               margin: 0 5px;
               color: $gray4;
+              font-weight: 200;
             }
             &:last-child {
               &:after {

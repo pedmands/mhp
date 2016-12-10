@@ -44,7 +44,6 @@
 
           color: $gray5;
           text-decoration: none;
-          font-family: "Montserrat", sans-serif;
           &:hover {
             text-decoration: underline;
           }
@@ -52,7 +51,7 @@
         &:nth-child(6),
         &:last-child{
           display: inline-block;
-          font-size: 14px;
+          font-size: 16px;
 
         }
         &:nth-child(6):after {

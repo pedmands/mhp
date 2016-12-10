@@ -1,13 +1,15 @@
 .serial-wrap {
-  display: flex;
+
   .fp-serial-player {
     width:380px;
-    flex-grow: 2;
+    display: inline-block;
   }
   .entry-content {
+    display: inline-block;
     width: 500px;
+    vertical-align: top;
     margin-left: 10px;
-    flex-grow: 3;
+    p:first-of-type {margin-top:0;}
   }
 }
 #welcome {
@@ -147,7 +149,7 @@ main.front-page article {
 }
 .fp-title {
   width: 80%;
-  color: $gray6;
+  color: $gray4;
   margin: 30px auto;
 
   border-bottom: 1px solid $gray6;

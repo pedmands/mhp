@@ -78,11 +78,11 @@
 			@media screen and (min-width: $bp-tablet){
 				:hover > a,
 				.focus > a {
-					background: $gray8;
+					background: $gray5;
 				}
 				a:hover,
 				a.focus {
-					background: $gray8;
+					background: $gray5;
 				}
 			}
 		}//ul ul
@@ -121,9 +121,8 @@
 		font-size: 18px;
 		display: block;
 		text-decoration: none;
-		text-transform: uppercase;
 		font-weight: 400;
-		color: $gray4;
+		color: $gray2;
 		padding: 10px 20px;
 	}
 }// .main-navigation
@@ -133,20 +132,22 @@
 .current_page_ancestor > a,
 .current-menu-ancestor > a {
 					color: $red;
-					font-weight: 800;
+					font-weight: 400;
+					text-decoration: underline;
 }
 #secondary-menu {
 	a {
 		// font-size: 14px;
-		font-weight: 200;
-		color: $gray5;
+		font-weight: 400;
+		color: $gray4;
 	}
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 						color: $red;
-						font-weight: bold;
+						font-weight: 400;
+						text-decoration: underline;
 	}
 	@media screen and (min-width: $bp-tablet + 1){
 		position: absolute;

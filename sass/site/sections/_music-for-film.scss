@@ -27,13 +27,16 @@
     margin-left: 0;
     list-style-type: none;
     font-weight: 600;
+    font-size: 16px;
     margin-bottom: 10px;
+    color: $gray2;
     li {
       display: inline-block;
       &:after {
-        content: '•';
+        content: '/';
         margin: 0 5px;
         color: $gray4;
+        font-weight: 200;
       }
       &:last-child {
         &:after {
