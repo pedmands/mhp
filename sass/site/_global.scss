@@ -6,9 +6,12 @@
 }
 #primary {
 margin-top: 55px;
+background-color: #fff;
 }
 #main {
   width:100%;
+  max-width: 1200px;
+  margin: 0 auto;
   @include layout(11);
   @include clearfix;
   background: white;

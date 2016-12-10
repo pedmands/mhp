@@ -6,7 +6,6 @@
 		cursor:pointer;
 		list-style-type: none;
 		margin-left: 0;
-		font-family: "Montserrat", sans-serif;
 		display: none;
 		z-index: 100;
 		.menu-item-has-children { // Dropdown Icon
@@ -121,6 +120,7 @@
 		transition: all .3s ease-out;
 		display: block;
 		text-decoration: none;
+		font-weight: 400;
 		color: black;
 		padding: 10px 20px;
 		@include respond-to(laptop){

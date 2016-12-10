@@ -1,4 +1,5 @@
 @import 'media_queries';
+@import 'decorative';
 
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {

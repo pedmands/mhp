@@ -26,11 +26,12 @@
  				$params = array(
  				    'controls'    => 0,
  				    'hd'        => 1,
- 				    'autohide'    => 1,
+ 				    'autohide'    => 0,
  						'showinfo' => 0,
  						'modestbranding' => 1,
  						'rel' => 0,
- 						'controls' => 2
+ 						'controls' => 2,
+            'allowFullScreen' => true
  				);
  				$new_src = add_query_arg($params, $src);
  				$iframe = str_replace($src, $new_src, $iframe);

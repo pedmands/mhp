@@ -13,7 +13,6 @@
  	<?php while( have_rows('film_examples') ): the_row();
  		$title = get_sub_field('title');
  		$roles = get_sub_field('roles');
- 		$audio = get_sub_field('audio_code');
  		$video = get_sub_field('video_url');
  		$description = get_sub_field('description');
  		?>
@@ -28,7 +27,9 @@
           echo '<div class="serial-player"></div>';
         } else if ($title === 'Strays') {
           echo '<div class="strays-player"></div>';
-        } else {
+        } else if ($title === 'Bayard and Me') {
+          echo '<div class="bayard-player"></div>';
+        } else if (get_sub_field('video')) {
  					// get iframe HTML
  					$iframe = $video;
  					// use preg_match to find iframe src
@@ -71,6 +72,7 @@
     <script>document.addEventListener("DOMContentLoaded", function(event) {
       window.renderSerial(document.querySelector('.serial-player'));
       window.renderStrays(document.querySelector('.strays-player'));
+      window.renderBayard(document.querySelector('.bayard-player'));
     });</script>
  </article><!-- #post-## -->
  <?php endwhile; ?>

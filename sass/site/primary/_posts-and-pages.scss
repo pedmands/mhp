@@ -44,7 +44,7 @@
 	}// a
 }// .back
 .page-title {
-  width: span(9 of 11);
+  width: 80%;
   color: $gray1;
   margin: 30px auto;
 	margin-top:35px;
@@ -59,11 +59,11 @@
  .site-main {padding-bottom:40px;}
 }
 .hentry {
-	width: span(9); // this layout is defined in site/_global.scss
+	width: 80%; // this layout is defined in site/_global.scss
 	margin: 10px auto 20px;
 	@include clearfix;
 	@media screen and (max-width: $bp-tablet){
-		width:90%;
+		width:95%;
 	}
 }
 

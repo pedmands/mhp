@@ -18,17 +18,16 @@
     display: inline-block;
     .site-title {
       padding: 25px 5px;
-      font-family: "Montserrat", sans-serif;
       font-size: 20px;
-      letter-spacing: -1px;
       margin: 0;
       line-height: 1.2;
       a {
+        background-size: 100% 2px !important;
+        background-position: bottom !important;
         width:100%;
         text-align: center;
         color: black;
-        text-decoration: underline;
-        font-weight: normal;
+        text-decoration: none;
         text-transform: uppercase;
         &:hover {
           text-decoration: none;

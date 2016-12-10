@@ -1,24 +1,43 @@
-
-.serial-player {
+.serial-player,
+.strays-player,
+.bayard-player,
+.sono-player {
   width: 100%;
-  position: relative;
   border: 1px solid #ccc;
   background-color: #fff;
+}
+.fp-serial-player {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+.serial-player, .fp-serial-player {
   .cover {
     background: url('https://static1.squarespace.com/static/5179f704e4b0f0be01c191ad/t/5492e756e4b087ef8e0508f1/1418913622786/?format=750w');
   }
 }
 .strays-player {
-  border: 1px solid #ccc;
   .cover {
-    background: url('http://gladdata.design/mark/wp-content/uploads/2016/11/Video-Thumb.png');
+    background: url('http://gladdata.design/mark/wp-content/uploads/2016/12/strays.png');
+  }
+}
+.bayard-player {
+  .cover {
+    background: url('http://gladdata.design/mark/wp-content/uploads/2016/12/artworks-000197352831-y3n24s-t500x500-e1481316664537.jpg');
+  }
+}
+.sono-player {
+  width: 500px;
+  margin: 0 auto;
+  .cover {
+    background: url('https://i1.sndcdn.com/artworks-000195712967-q8hw53-t500x500.jpg');
   }
 }
 .cover {
   display: flex;
-  height:180px;
+  height:150px;
   border-bottom: 1px solid #ccc;
-  background-position: center !important;
+  background-color:#eee !important;
+  background-position: center!important;
   background-size: cover !important;
 }
 .cover > a {
@@ -168,12 +187,10 @@
 /* Playlist */
 .playlist {
   background: #eee;
-  position: absolute;
-  left: 0;
-  bottom: 20px;
+
   list-style-type: none;
   margin-left: 0;
-  padding-left: 0;
+
 }
 .playlist-toggle {
   display: none;
@@ -183,12 +200,19 @@
 }
 .playlist-item {
   cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 .playlist-item:hover {
-  background-color: #ccc;
+  background-color: #ddd;
 }
 .active {
-  background-color: #999;
+  background-color: #ccc;
 }
 .loader {
   margin: 60px auto;

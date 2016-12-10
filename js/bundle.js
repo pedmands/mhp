@@ -83,6 +83,14 @@
 
 	var _straysPlayer2 = _interopRequireDefault(_straysPlayer);
 
+	var _bayardPlayer = __webpack_require__(227);
+
+	var _bayardPlayer2 = _interopRequireDefault(_bayardPlayer);
+
+	var _sonoPlayer = __webpack_require__(228);
+
+	var _sonoPlayer2 = _interopRequireDefault(_sonoPlayer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxPromise2.default)(_redux.createStore);
@@ -92,6 +100,12 @@
 	};
 	window.renderStrays = function (targetElement) {
 	  return _reactDom2.default.render(_react2.default.createElement(_straysPlayer2.default, null), targetElement);
+	};
+	window.renderBayard = function (targetElement) {
+	  return _reactDom2.default.render(_react2.default.createElement(_bayardPlayer2.default, null), targetElement);
+	};
+	window.renderSono = function (targetElement) {
+	  return _reactDom2.default.render(_react2.default.createElement(_sonoPlayer2.default, null), targetElement);
 	};
 
 /***/ },
@@ -24374,7 +24388,6 @@
 	                );
 	            }
 	            var activeTrack = playlist.tracks[activeIndex];
-	            var cover = 'https://static1.squarespace.com/static/5179f704e4b0f0be01c191ad/t/5492e756e4b087ef8e0508f1/1418913622786/?format=750w';
 	            var url = activeTrack.permalink_url;
 	            var playlistUrl = playlist.permalink_url;
 	            var playlistTitle = playlist.title.substring(0, playlist.title.length - 18);
@@ -24407,7 +24420,7 @@
 	                        null,
 	                        _react2.default.createElement(
 	                            'a',
-	                            { href: url },
+	                            { href: playlistUrl },
 	                            playlistTitle
 	                        )
 	                    ),
@@ -24731,7 +24744,6 @@
 	                );
 	            }
 	            var activeTrack = playlist.tracks[activeIndex];
-	            var cover = 'http://gladdata.design/mark/wp-content/uploads/2016/11/Video-Thumb.png';
 	            var url = activeTrack.permalink_url;
 	            var playlistUrl = playlist.permalink_url;
 	            var userUrl = playlist.user.permalink_url;
@@ -24763,7 +24775,7 @@
 	                        null,
 	                        _react2.default.createElement(
 	                            'a',
-	                            { href: url },
+	                            { href: playlistUrl },
 	                            playlist.title
 	                        )
 	                    ),
@@ -24892,6 +24904,716 @@
 	}(_react.Component);
 
 	exports.default = StraysPlayer;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _addons = __webpack_require__(219);
+
+	var _components = __webpack_require__(207);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var clientId = '08f79801a998c381762ec5b15e4914d5';
+	var straysUrl = 'https://soundcloud.com/markhphillips/sets/bayard-and-me';
+
+	var CustomPlayer = function (_React$Component) {
+	    _inherits(CustomPlayer, _React$Component);
+
+	    function CustomPlayer() {
+	        _classCallCheck(this, CustomPlayer);
+
+	        var _this = _possibleConstructorReturn(this, (CustomPlayer.__proto__ || Object.getPrototypeOf(CustomPlayer)).call(this));
+
+	        _this.state = {
+	            activeIndex: 0,
+	            condition: false
+	        };
+	        return _this;
+	    }
+
+	    _createClass(CustomPlayer, [{
+	        key: 'prettyTime',
+	        value: function prettyTime(time) {
+	            var hours = Math.floor(time / 3600);
+	            var mins = '0' + Math.floor(time % 3600 / 60);
+	            var secs = '0' + Math.floor(time % 60);
+
+	            mins = mins.substr(mins.length - 2);
+	            secs = secs.substr(secs.length - 2);
+
+	            if (!isNaN(secs)) {
+	                if (hours) {
+	                    return hours + ':' + mins + ':' + secs;
+	                }
+	                return mins + ':' + secs;
+	            }
+	            return '00:00';
+	        } //prettyTime
+
+	    }, {
+	        key: 'prettyCount',
+	        value: function prettyCount(count) {
+	            var kCount = count / 1000;
+	            var finalCount = Math.round(kCount * 10) / 10;
+	            if (count > 1000) {
+	                return finalCount + 'k';
+	            }
+	            return count;
+	        }
+	    }, {
+	        key: 'play',
+	        value: function play() {
+	            var _props = this.props,
+	                soundCloudAudio = _props.soundCloudAudio,
+	                playing = _props.playing;
+
+	            if (playing) {
+	                soundCloudAudio.pause();
+	            } else {
+	                soundCloudAudio.play();
+	            }
+	        }
+	    }, {
+	        key: 'playTrackAtIndex',
+	        value: function playTrackAtIndex(playlistIndex) {
+	            var soundCloudAudio = this.props.soundCloudAudio;
+
+	            this.setState({ activeIndex: playlistIndex });
+	            soundCloudAudio.play({ playlistIndex: playlistIndex });
+	            this.setState({ condition: !this.state.condition });
+	        }
+	    }, {
+	        key: 'prevIndex',
+	        value: function prevIndex(e) {
+	            var activeIndex = this.state.activeIndex;
+
+	            if (activeIndex <= 0) {
+	                return;
+	            }
+	            var _props2 = this.props,
+	                soundCloudAudio = _props2.soundCloudAudio,
+	                onPrevClick = _props2.onPrevClick;
+
+
+	            this.setState({ activeIndex: --activeIndex });
+
+	            soundCloudAudio && soundCloudAudio.previous();
+	            onPrevClick && onPrevClick(e);
+	        }
+	    }, {
+	        key: 'nextIndex',
+	        value: function nextIndex(e) {
+	            var activeIndex = this.state.activeIndex;
+	            var playlist = this.props.playlist;
+
+	            if (activeIndex >= playlist.tracks.length - 1) {
+	                return;
+	            }
+	            var _props3 = this.props,
+	                soundCloudAudio = _props3.soundCloudAudio,
+	                onNextClick = _props3.onNextClick;
+
+
+	            this.setState({ activeIndex: activeIndex + 1 });
+
+	            soundCloudAudio && soundCloudAudio.next();
+	            onNextClick && onNextClick(e);
+	        }
+	    }, {
+	        key: 'renderTrackList',
+	        value: function renderTrackList() {
+	            var _this2 = this;
+
+	            var playlist = this.props.playlist;
+
+
+	            var tracks = playlist.tracks.map(function (track, i) {
+	                var classNames = "playlist-item";
+	                if (_this2.state.activeIndex === i) {
+	                    classNames = "playlist-item active";
+	                }
+	                return _react2.default.createElement(
+	                    'li',
+	                    {
+	                        key: track.id,
+	                        onClick: _this2.playTrackAtIndex.bind(_this2, i),
+	                        className: classNames
+	                    },
+	                    i + 1,
+	                    '. ',
+	                    track.title
+	                );
+	            });
+	            return _react2.default.createElement(
+	                'ol',
+	                { className: this.state.condition ? "playlist" : "playlist hide" },
+	                tracks
+	            );
+	        } // renderTrackList
+
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick() {
+	            this.setState({ condition: !this.state.condition });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props4 = this.props,
+	                track = _props4.track,
+	                playing = _props4.playing,
+	                playlist = _props4.playlist,
+	                duration = _props4.duration,
+	                currentTime = _props4.currentTime;
+	            var activeIndex = this.state.activeIndex;
+
+
+	            console.log(playlist);
+	            if (!playlist) {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { className: 'loader' },
+	                    ' Loading... '
+	                );
+	            }
+	            var activeTrack = playlist.tracks[activeIndex];
+	            var url = activeTrack.permalink_url;
+	            var playlistUrl = playlist.permalink_url;
+	            var userUrl = playlist.user.permalink_url;
+	            var logo = 'http://dev.bowdenweb.com/a/i/cons/icomoon/soundcloud1.png';
+	            var trackTitle = activeTrack.title;
+
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'cover' },
+	                    _react2.default.createElement('a', { href: playlistUrl })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'track-info' },
+	                    _react2.default.createElement(
+	                        'h1',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: url },
+	                            trackTitle
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'h3',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: playlistUrl },
+	                            playlist.title
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: userUrl },
+	                            activeTrack.user.username
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'meta' },
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: playlistUrl },
+	                                _react2.default.createElement('img', { className: 'sc_logo', src: logo })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement('i', { className: 'fa fa-play' }),
+	                            this.prettyCount(activeTrack.playback_count)
+	                        ),
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement('i', { className: 'fa fa-heart' }),
+	                            this.prettyCount(activeTrack.favoritings_count)
+	                        ),
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement('i', { className: 'fa fa-comment' }),
+	                            activeTrack.comment_count
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'controls' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'control' },
+	                        _react2.default.createElement('button', _extends({
+	                            onClick: this.prevIndex.bind(this),
+	                            className: 'prev-button'
+	                        }, this.props))
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'control' },
+	                        _react2.default.createElement(_components.PlayButton, _extends({
+	                            onClick: this.play.bind(this),
+	                            className: playing ? 'play-btn pause' : 'play-btn play'
+	                        }, this.props))
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'control' },
+	                        _react2.default.createElement('button', _extends({
+	                            type: 'button',
+	                            onClick: this.nextIndex.bind(this),
+	                            className: 'next-button'
+	                        }, this.props))
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'progress-time' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'current-time' },
+	                        this.prettyTime(currentTime)
+	                    ),
+	                    _react2.default.createElement(_components.Progress, _extends({
+	                        value: currentTime / duration * 100 || 0,
+	                        className: 'my-progress'
+	                    }, this.props)),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'duration' },
+	                        this.prettyTime(duration)
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'playlist-toggle', type: 'button', onClick: this.handleClick.bind(this) },
+	                    _react2.default.createElement('i', { className: 'fa fa-list' })
+	                ),
+	                this.renderTrackList()
+	            );
+	        }
+	    }]);
+
+	    return CustomPlayer;
+	}(_react2.default.Component);
+
+	var BayardPlayer = function (_Component) {
+	    _inherits(BayardPlayer, _Component);
+
+	    function BayardPlayer() {
+	        _classCallCheck(this, BayardPlayer);
+
+	        return _possibleConstructorReturn(this, (BayardPlayer.__proto__ || Object.getPrototypeOf(BayardPlayer)).apply(this, arguments));
+	    }
+
+	    _createClass(BayardPlayer, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                _addons.SoundPlayerContainer,
+	                _extends({ resolveUrl: straysUrl, clientId: clientId }, this.props),
+	                _react2.default.createElement(CustomPlayer, null)
+	            );
+	        }
+	    }]);
+
+	    return BayardPlayer;
+	}(_react.Component);
+
+	exports.default = BayardPlayer;
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _addons = __webpack_require__(219);
+
+	var _components = __webpack_require__(207);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var clientId = '08f79801a998c381762ec5b15e4914d5';
+	var sonoUrl = 'https://soundcloud.com/markhphillips/sets/new-album-quick-mastering/s-kyNma';
+
+	var CustomPlayer = function (_React$Component) {
+	    _inherits(CustomPlayer, _React$Component);
+
+	    function CustomPlayer() {
+	        _classCallCheck(this, CustomPlayer);
+
+	        var _this = _possibleConstructorReturn(this, (CustomPlayer.__proto__ || Object.getPrototypeOf(CustomPlayer)).call(this));
+
+	        _this.state = {
+	            activeIndex: 0,
+	            condition: false
+	        };
+	        return _this;
+	    }
+
+	    _createClass(CustomPlayer, [{
+	        key: 'prettyTime',
+	        value: function prettyTime(time) {
+	            var hours = Math.floor(time / 3600);
+	            var mins = '0' + Math.floor(time % 3600 / 60);
+	            var secs = '0' + Math.floor(time % 60);
+
+	            mins = mins.substr(mins.length - 2);
+	            secs = secs.substr(secs.length - 2);
+
+	            if (!isNaN(secs)) {
+	                if (hours) {
+	                    return hours + ':' + mins + ':' + secs;
+	                }
+	                return mins + ':' + secs;
+	            }
+	            return '00:00';
+	        } //prettyTime
+
+	    }, {
+	        key: 'prettyCount',
+	        value: function prettyCount(count) {
+	            var kCount = count / 1000;
+	            var finalCount = Math.round(kCount * 10) / 10;
+	            if (count > 1000) {
+	                return finalCount + 'k';
+	            }
+	            return count;
+	        }
+	    }, {
+	        key: 'play',
+	        value: function play() {
+	            var _props = this.props,
+	                soundCloudAudio = _props.soundCloudAudio,
+	                playing = _props.playing;
+
+	            if (playing) {
+	                soundCloudAudio.pause();
+	            } else {
+	                soundCloudAudio.play();
+	            }
+	        }
+	    }, {
+	        key: 'playTrackAtIndex',
+	        value: function playTrackAtIndex(playlistIndex) {
+	            var soundCloudAudio = this.props.soundCloudAudio;
+
+	            this.setState({ activeIndex: playlistIndex });
+	            soundCloudAudio.play({ playlistIndex: playlistIndex });
+	            this.setState({ condition: !this.state.condition });
+	        }
+	    }, {
+	        key: 'prevIndex',
+	        value: function prevIndex(e) {
+	            var activeIndex = this.state.activeIndex;
+
+	            if (activeIndex <= 0) {
+	                return;
+	            }
+	            var _props2 = this.props,
+	                soundCloudAudio = _props2.soundCloudAudio,
+	                onPrevClick = _props2.onPrevClick;
+
+
+	            this.setState({ activeIndex: --activeIndex });
+
+	            soundCloudAudio && soundCloudAudio.previous();
+	            onPrevClick && onPrevClick(e);
+	        }
+	    }, {
+	        key: 'nextIndex',
+	        value: function nextIndex(e) {
+	            var activeIndex = this.state.activeIndex;
+	            var playlist = this.props.playlist;
+
+	            if (activeIndex >= playlist.tracks.length - 1) {
+	                return;
+	            }
+	            var _props3 = this.props,
+	                soundCloudAudio = _props3.soundCloudAudio,
+	                onNextClick = _props3.onNextClick;
+
+
+	            this.setState({ activeIndex: activeIndex + 1 });
+
+	            soundCloudAudio && soundCloudAudio.next();
+	            onNextClick && onNextClick(e);
+	        }
+	    }, {
+	        key: 'renderTrackList',
+	        value: function renderTrackList() {
+	            var _this2 = this;
+
+	            var playlist = this.props.playlist;
+
+
+	            var tracks = playlist.tracks.map(function (track, i) {
+	                var classNames = "playlist-item";
+	                if (_this2.state.activeIndex === i) {
+	                    classNames = "playlist-item active";
+	                }
+	                return _react2.default.createElement(
+	                    'li',
+	                    {
+	                        key: track.id,
+	                        onClick: _this2.playTrackAtIndex.bind(_this2, i),
+	                        className: classNames
+	                    },
+	                    i + 1,
+	                    '. ',
+	                    track.title
+	                );
+	            });
+	            return _react2.default.createElement(
+	                'ol',
+	                { className: 'playlist' },
+	                tracks
+	            );
+	        } // renderTrackList
+
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick() {
+	            this.setState({ condition: !this.state.condition });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props4 = this.props,
+	                track = _props4.track,
+	                playing = _props4.playing,
+	                playlist = _props4.playlist,
+	                duration = _props4.duration,
+	                currentTime = _props4.currentTime;
+	            var activeIndex = this.state.activeIndex;
+
+
+	            console.log(playlist);
+	            if (!playlist) {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { className: 'loader' },
+	                    ' Loading... '
+	                );
+	            }
+	            var activeTrack = playlist.tracks[activeIndex];
+	            var url = activeTrack.permalink_url;
+	            var playlistUrl = playlist.permalink_url;
+	            var userUrl = playlist.user.permalink_url;
+	            var logo = 'http://dev.bowdenweb.com/a/i/cons/icomoon/soundcloud1.png';
+	            var trackTitle = activeTrack.title;
+
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'cover' },
+	                    _react2.default.createElement('a', { href: playlistUrl })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'track-info' },
+	                    _react2.default.createElement(
+	                        'h1',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: url },
+	                            trackTitle
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'h3',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: playlistUrl },
+	                            playlist.title
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: userUrl },
+	                            activeTrack.user.username
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'meta' },
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: playlistUrl },
+	                                _react2.default.createElement('img', { className: 'sc_logo', src: logo })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement('i', { className: 'fa fa-play' }),
+	                            this.prettyCount(activeTrack.playback_count)
+	                        ),
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement('i', { className: 'fa fa-heart' }),
+	                            this.prettyCount(activeTrack.favoritings_count)
+	                        ),
+	                        _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            _react2.default.createElement('i', { className: 'fa fa-comment' }),
+	                            activeTrack.comment_count
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'controls' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'control' },
+	                        _react2.default.createElement('button', _extends({
+	                            onClick: this.prevIndex.bind(this),
+	                            className: 'prev-button'
+	                        }, this.props))
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'control' },
+	                        _react2.default.createElement(_components.PlayButton, _extends({
+	                            onClick: this.play.bind(this),
+	                            className: playing ? 'play-btn pause' : 'play-btn play'
+	                        }, this.props))
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'control' },
+	                        _react2.default.createElement('button', _extends({
+	                            type: 'button',
+	                            onClick: this.nextIndex.bind(this),
+	                            className: 'next-button'
+	                        }, this.props))
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'progress-time' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'current-time' },
+	                        this.prettyTime(currentTime)
+	                    ),
+	                    _react2.default.createElement(_components.Progress, _extends({
+	                        value: currentTime / duration * 100 || 0,
+	                        className: 'my-progress'
+	                    }, this.props)),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'duration' },
+	                        this.prettyTime(duration)
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'playlist-toggle', type: 'button', onClick: this.handleClick.bind(this) },
+	                    _react2.default.createElement('i', { className: 'fa fa-list' })
+	                ),
+	                this.renderTrackList()
+	            );
+	        }
+	    }]);
+
+	    return CustomPlayer;
+	}(_react2.default.Component);
+
+	var SonoPlayer = function (_Component) {
+	    _inherits(SonoPlayer, _Component);
+
+	    function SonoPlayer() {
+	        _classCallCheck(this, SonoPlayer);
+
+	        return _possibleConstructorReturn(this, (SonoPlayer.__proto__ || Object.getPrototypeOf(SonoPlayer)).apply(this, arguments));
+	    }
+
+	    _createClass(SonoPlayer, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                _addons.SoundPlayerContainer,
+	                _extends({ resolveUrl: sonoUrl, clientId: clientId }, this.props),
+	                _react2.default.createElement(CustomPlayer, null)
+	            );
+	        }
+	    }]);
+
+	    return SonoPlayer;
+	}(_react.Component);
+
+	exports.default = SonoPlayer;
 
 /***/ }
 /******/ ]);

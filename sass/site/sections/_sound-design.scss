@@ -6,52 +6,6 @@
       width:95%;
     }
   }// intro
-  .mejs-container {
-    width:300px !important;
-    @media screen and (max-width: $bp-tablet + 1){
-      width:250px !important;
-    }
-  }
-  .mejs-container,
-  .mejs-embed,
-  .mejs-embed body,
-  .mejs-container .mejs-controls {
-    background: white !important;
-    .mejs-time {
-      color: $gray3 !important;
-    }
-    .mejs-button {
-      button {
-        background-color: $gray3;
-        padding: 5px;
-        box-shadow: none;
-        @media screen and (max-width: $bp-tablet + 1){
-          transform: scale(1.5);
-        }
-      }
-    }// .mejs-button
-    @media screen and (max-width: $bp-tablet + 1){
-      .mejs-volume-button,.mejs-horizontal-volume-total, .mejs-horizontal-volume-current, {
-        display: none;
-      }
-    }
-    .mejs-time-rail {
-      .mejs-time-total {
-        background: $gray5;
-      }
-      .mejs-time-current {
-        background: $red;
-      }
-      .mejs-time-buffering,
-      .mejs-time-loaded {background:$gray6;}
-    }// .mejs-time-rail
-    .mejs-horizontal-volume-total {
-      background: $gray6;
-    }
-    .mejs-horizontal-volume-current {
-      background: $gray4;
-    }
-  }// .mejs-container .mejs-controls
   .page-title {
     margin-bottom: 10px;
   }
@@ -80,6 +34,9 @@
     @include respond-to(phone){
       width:100%;
     }
+    @include respond-to(tablet){
+      width:95%;
+    }
     .sd-example {
       position: relative;
       width: 80%;
@@ -106,6 +63,8 @@
           position: relative;
           height: 100px;
           overflow: hidden;
+          display: flex;
+          align-items: center;
           @include respond-to(phone){
             height:70px;
             width:70px;
@@ -156,6 +115,10 @@
           }
         }// .sub-title
         .roles {
+          display:flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
           font-weight: 600;
           list-style-type: none;
           margin-left: 0;
@@ -164,7 +127,6 @@
             letter-spacing: -0.5px;
           }
           li {
-            display: inline-block;
             &:after {
               content: '•';
               margin: 0 5px;
