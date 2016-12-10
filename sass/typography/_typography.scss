@@ -4,9 +4,10 @@ input,
 select,
 textarea {
 	font-family: 'futura-pt', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	color: $color__text-main;
-	@include font-size(1);
+
+	font-size: 18px;
 	line-height: $font__line-height-body;
 }
 

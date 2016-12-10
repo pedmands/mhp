@@ -12,7 +12,7 @@
 }
 .serial-player, .fp-serial-player {
   .cover {
-    background: url('https://static1.squarespace.com/static/5179f704e4b0f0be01c191ad/t/5492e756e4b087ef8e0508f1/1418913622786/?format=750w');
+    background: url('http://gladdata.design/mark/wp-content/uploads/2016/12/SerialLogo-e1481351071619.jpg');
   }
 }
 .strays-player {
@@ -26,8 +26,13 @@
   }
 }
 .sono-player {
-  width: 500px;
   margin: 0 auto;
+  @media screen and (max-width: $bp-tablet){
+    width: 320px;
+  }
+  @media screen and (min-width: $bp-tablet+1){
+    width: 500px;
+  }
   .cover {
     background: url('https://i1.sndcdn.com/artworks-000195712967-q8hw53-t500x500.jpg');
   }
@@ -50,7 +55,7 @@
   &:hover {text-decoration: underline;}
 }
 .track-info h1 {
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
   margin: 10px auto 0;
   a {
@@ -64,8 +69,8 @@
   }
 }
 .track-info h2 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   text-align: center;
   margin: 0 auto 10px;
   a {
@@ -73,8 +78,8 @@
   }
 }
 .track-info h3 {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 300;
   text-align: center;
   margin: 0 auto;
   a {
@@ -187,10 +192,18 @@
 /* Playlist */
 .playlist {
   background: #eee;
-
   list-style-type: none;
   margin-left: 0;
-
+  .pb-count {
+    float: right;
+    color: #aaa;
+    &:after {
+      font-family: 'FontAwesome';
+      content: '\f04b';
+      margin-left:5px;
+      color: #aaa;
+    }
+  }
 }
 .playlist-toggle {
   display: none;
@@ -222,7 +235,7 @@
   border-top: 1.1em solid #eee;
   border-right: 1.1em solid #eee;
   border-bottom: 1.1em solid #eee;
-  border-left: 1.1em solid #FC561E;
+  border-left: 1.1em solid $red;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

@@ -9,7 +9,7 @@
   background: $white;
   padding-bottom:0;
   @include container();
-  box-shadow: 0 0 4px rgba(0,0,0,.4);
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
   .site-branding {
     margin: 0;
     text-align: center;
@@ -18,7 +18,7 @@
     display: inline-block;
     .site-title {
       padding: 25px 5px;
-      font-size: 20px;
+      font-size: 24px;
       margin: 0;
       line-height: 1.2;
       a {

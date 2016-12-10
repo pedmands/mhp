@@ -232,10 +232,9 @@ input,
 select,
 textarea {
   font-family: 'futura-pt', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: #404040;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -454,10 +453,10 @@ a {
       position: relative; }
       .main-navigation ul .menu-item-has-children:after {
         position: absolute;
-        top: 10px;
-        right: 20px;
+        top: 15px;
+        right: 25px;
         font-family: "FontAwesome";
-        content: "\f078";
+        content: "\f0d7";
         color: #999999;
         font-size: 14px; }
     .main-navigation ul ul {
@@ -507,10 +506,10 @@ a {
       @media screen and (min-width: 769px) {
         .main-navigation ul ul :hover > a,
         .main-navigation ul ul .focus > a {
-          background: #dddddd; }
+          background: #f6f6f6; }
         .main-navigation ul ul a:hover,
         .main-navigation ul ul a.focus {
-          background: #dddddd; } }
+          background: #f6f6f6; } }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
@@ -534,24 +533,24 @@ a {
     padding-right: 30px; }
   .main-navigation a {
     transition: all .3s ease-out;
+    font-size: 18px;
     display: block;
     text-decoration: none;
+    text-transform: uppercase;
     font-weight: 400;
-    color: black;
+    color: #bbbbbb;
     padding: 10px 20px; }
-    @media only screen and (min-width: 770px) and (max-width: 1024px) {
-      .main-navigation a {
-        font-size: 14px; } }
 
 .current_page_item > a,
 .current-menu-item > a,
 .current_page_ancestor > a,
 .current-menu-ancestor > a {
   color: #d0011b;
-  font-weight: bold; }
+  font-weight: 800; }
 
 #secondary-menu a {
-  color: #999999; }
+  font-weight: 200;
+  color: #cccccc; }
 #secondary-menu .current_page_item > a,
 #secondary-menu .current-menu-item > a,
 #secondary-menu .current_page_ancestor > a,
@@ -877,7 +876,7 @@ a {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
   .site-header:after {
     content: " ";
     display: block;
@@ -890,7 +889,7 @@ a {
     display: inline-block; }
     .site-header .site-branding .site-title {
       padding: 25px 5px;
-      font-size: 20px;
+      font-size: 24px;
       margin: 0;
       line-height: 1.2; }
       .site-header .site-branding .site-title a {
@@ -1126,10 +1125,9 @@ main.front-page article {
       width: 90%; } }
 
 .fp-title {
-  width: 89.09091%;
-  color: #999999;
+  width: 80%;
+  color: #dddddd;
   margin: 30px auto;
-  font-size: 24px;
   border-bottom: 1px solid #dddddd; }
 
 .continue-reading {
@@ -1923,7 +1921,7 @@ object {
   background-color: #fff; }
 
 .serial-player .cover, .fp-serial-player .cover {
-  background: url("https://static1.squarespace.com/static/5179f704e4b0f0be01c191ad/t/5492e756e4b087ef8e0508f1/1418913622786/?format=750w"); }
+  background: url("http://gladdata.design/mark/wp-content/uploads/2016/12/SerialLogo-e1481351071619.jpg"); }
 
 .strays-player .cover {
   background: url("http://gladdata.design/mark/wp-content/uploads/2016/12/strays.png"); }
@@ -1932,8 +1930,13 @@ object {
   background: url("http://gladdata.design/mark/wp-content/uploads/2016/12/artworks-000197352831-y3n24s-t500x500-e1481316664537.jpg"); }
 
 .sono-player {
-  width: 500px;
   margin: 0 auto; }
+  @media screen and (max-width: 769px) {
+    .sono-player {
+      width: 320px; } }
+  @media screen and (min-width: 770px) {
+    .sono-player {
+      width: 500px; } }
   .sono-player .cover {
     background: url("https://i1.sndcdn.com/artworks-000195712967-q8hw53-t500x500.jpg"); }
 
@@ -1955,7 +1958,7 @@ object {
     text-decoration: underline; }
 
 .track-info h1 {
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
   margin: 10px auto 0; }
   .track-info h1 a {
@@ -1966,16 +1969,16 @@ object {
     content: '"'; }
 
 .track-info h2 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   text-align: center;
   margin: 0 auto 10px; }
   .track-info h2 a {
     color: #999; }
 
 .track-info h3 {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 300;
   text-align: center;
   margin: 0 auto; }
   .track-info h3 a {
@@ -2071,6 +2074,14 @@ object {
   background: #eee;
   list-style-type: none;
   margin-left: 0; }
+  .playlist .pb-count {
+    float: right;
+    color: #aaa; }
+    .playlist .pb-count:after {
+      font-family: 'FontAwesome';
+      content: '\f04b';
+      margin-left: 5px;
+      color: #aaa; }
 
 .playlist-toggle {
   display: none; }
@@ -2101,7 +2112,7 @@ object {
   border-top: 1.1em solid #eee;
   border-right: 1.1em solid #eee;
   border-bottom: 1.1em solid #eee;
-  border-left: 1.1em solid #FC561E;
+  border-left: 1.1em solid #d0011b;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

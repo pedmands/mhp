@@ -65,7 +65,7 @@ get_header(); ?>
 		<?php } ?>
 
 		<main id="main" class="site-main" role="main">
-		<h1 class="page-title">The Latest</h1>
+		<h1 class="fp-title">The Latest</h1>
 		<?php
 		if ( have_posts() ) :
 

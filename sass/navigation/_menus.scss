@@ -12,10 +12,10 @@
 			position: relative;
 			&:after {
 				position: absolute;
-				top: 10px;
-				right: 20px;
+				top: 15px;
+				right: 25px;
 				font-family: "FontAwesome";
-				content: "\f078";
+				content: "\f0d7";
 				color: $gray3;
 				font-size: 14px;
 			}
@@ -78,11 +78,11 @@
 			@media screen and (min-width: $bp-tablet){
 				:hover > a,
 				.focus > a {
-					background: $gray6;
+					background: $gray8;
 				}
 				a:hover,
 				a.focus {
-					background: $gray6;
+					background: $gray8;
 				}
 			}
 		}//ul ul
@@ -118,14 +118,13 @@
 	}
 	a {                                     // The big-kahuna a ... master cascader
 		transition: all .3s ease-out;
+		font-size: 18px;
 		display: block;
 		text-decoration: none;
+		text-transform: uppercase;
 		font-weight: 400;
-		color: black;
+		color: $gray4;
 		padding: 10px 20px;
-		@include respond-to(laptop){
-			font-size: 14px;
-		}
 	}
 }// .main-navigation
 
@@ -134,11 +133,13 @@
 .current_page_ancestor > a,
 .current-menu-ancestor > a {
 					color: $red;
-					font-weight: bold;
+					font-weight: 800;
 }
 #secondary-menu {
 	a {
-		color: $gray3;
+		// font-size: 14px;
+		font-weight: 200;
+		color: $gray5;
 	}
 	.current_page_item > a,
 	.current-menu-item > a,
