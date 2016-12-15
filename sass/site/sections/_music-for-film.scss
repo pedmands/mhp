@@ -1,6 +1,6 @@
 .music-film {
   .page-title {
-    margin-bottom:10px;
+    margin-bottom:20px;
   }
 }
 .mff {
@@ -19,53 +19,26 @@
       border-bottom: none;
     }
   }
-
   .entry-title {
     font-size: 24px;
+    text-transform: uppercase;
+    @media screen and (max-width: $bp-tablet){
+      margin-top: 10px;
+    }
   }
-  .roles {
-    margin-left: 0;
-    list-style-type: none;
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: $gray2;
-    li {
-      display: inline-block;
-      &:after {
-        content: '/';
-        margin: 0 5px;
-        color: $gray4;
-        font-weight: 200;
-      }
-      &:last-child {
-        &:after {
-          content: '';
-        }
-      }
-    }// li
-  }// .roles
   .entry-content {
     .media {
       display: inline-block;
-      width: 30%;
-      @include respond-to(laptop){
-        width:38%;
+      width: 290px;
+      @media screen and (max-width: $bp-tablet){
+        width: 320px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 20px;
       }
-      @include respond-to(desktop){
-        width:38%;
-      }
-      @include respond-to(tablet){
-        width: 45%;
-      }
-      @include respond-to(phone){
-        float:none;
-        width:100%;
-      }
-
       iframe {
-    width:100%;
-    height: 300px;
+      width:100%;
+      height: 300px;
       }// iframe
       iframe.youtube-vid {
         width:100%;
@@ -77,38 +50,18 @@
     }// .media
     .description {
       display: inline-block;
+      float: right;
+      width: 490px;
       vertical-align: top;
-      margin-left:5%;
-      width: 60%;
-      @include respond-to(phone){
-        margin-left: 0;
-      }
-      @include respond-to(tablet){
-        width: 50%;
-        margin-left: 2%;
-      }
-      @include respond-to(laptop){
-        width:55%;
-        margin-left: 2%;
-      }
-      @include respond-to(desktop){
-        width:55%;
-        margin-left: 2%;
-      }
+      margin-left:20px;
       p {
-        margin: 0;
-        @include respond-to(phone){
-          font-size: 14px;
-        }
-      }
 
-      @include respond-to(phone){
+      }
+      @media screen and (max-width: $bp-tablet){
         float:none;
         width: 100%;
         margin-top: 10px;
-      }
-      @include respond-to(tablet){
-        width: span(5 of 10);
+        margin-left: auto;
       }
     }// .description
   }// .entry-content

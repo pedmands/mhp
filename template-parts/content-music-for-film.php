@@ -17,9 +17,6 @@
  		$description = get_sub_field('description');
  		?>
  <article id="post-<?php the_ID(); ?>" class="hentry mff">
- 	<header class="entry-header">
-    <?php echo '<h1 class="entry-title">' . $title . '</h1>'; ?>
- 	</header><!-- .entry-header -->
  		<div class="entry-content">
  			<div class="media">
  				<?php
@@ -57,14 +54,7 @@
  				?>
  			</div>
  			<div class="description">
-        <?php
-
-          echo '<ul class="roles">';
-            foreach($roles as $role){
-              echo '<li>' . $role . '</li>';
-            }
-          echo '</ul>';
-     		?>
+      <?php echo '<h1 class="entry-title">' . $title . '</h1>'; ?>
  				<?php echo $description; ?>
  			</div><!-- .article-shifter -->
  		</div><!-- .entry-content -->

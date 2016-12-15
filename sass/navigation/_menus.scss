@@ -2,6 +2,7 @@
 	z-index:100;
 	display: inline-block;
 	vertical-align: bottom;
+
 	ul {
 		cursor:pointer;
 		list-style-type: none;
@@ -15,14 +16,13 @@
 				top: 15px;
 				right: 25px;
 				font-family: "FontAwesome";
-				content: "\f0d7";
+				content: "\f078";
 				color: $gray3;
 				font-size: 14px;
 			}
 		}// ul menu-item-has-children
 		ul {
 			z-index: 100;
-			min-width:250px;
 			background: $gray7;
 			@media screen and (min-width: $bp-tablet +1){
 				float: left;
@@ -39,7 +39,7 @@
 					right: 10px;
 					transform: translateY(-50%);
 					font-family: "FontAwesome";
-					content: "\f054";
+					content: "\f078";
 					color: $gray3;
 					font-size: 14px;
 				}
@@ -114,16 +114,18 @@
 		}
 	}
 	.menu-item-has-children li a {
-		padding-right: 30px;
+
 	}
-	a {                                     // The big-kahuna a ... master cascader
+	a {                              // The big-kahuna a ... master cascader
+		font-family: 'Montserrat', sans-serif !important;
 		transition: all .3s ease-out;
-		font-size: 18px;
+		font-size: 20px;
 		display: block;
 		text-decoration: none;
 		font-weight: 400;
-		color: $gray2;
+		color: $gray1;
 		padding: 10px 20px;
+		letter-spacing: normal;
 	}
 }// .main-navigation
 
@@ -132,22 +134,30 @@
 .current_page_ancestor > a,
 .current-menu-ancestor > a {
 					color: $red;
-					font-weight: 400;
-					text-decoration: underline;
+					font-weight: 700;
+
 }
 #secondary-menu {
+	@media screen and (min-width: $bp-tablet + 1) and (max-width: 960px) {
+		position: absolute;
+		top: 0px;
+		right: 0;
+		height: 30px;
+	}
 	a {
-		// font-size: 14px;
+		@media screen and (min-width: $bp-tablet + 1) and (max-width: 960px) {
+			font-size: 14px;
+		}
 		font-weight: 400;
-		color: $gray4;
+		color: $gray3;
 	}
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 						color: $red;
-						font-weight: 400;
-						text-decoration: underline;
+						font-weight: 700;
+
 	}
 	@media screen and (min-width: $bp-tablet + 1){
 		position: absolute;
@@ -179,7 +189,7 @@
 }
 .menu-toggle {
 	position: fixed;
-	top: 5px;
+	top: 15px;
 	right: 15px;
 	background: none;
 	border: none;
@@ -190,7 +200,7 @@
 	z-index:52;
 	&:hover {
 		i{
-			color:$red;
+			color:#1e73be;
 		}
 
 	}
@@ -200,14 +210,7 @@
 		color: $gray6;
 		text-shadow: 1px 1px 0 $gray4;
 	}
-	&:after {
-		content: 'MENU';
-		margin-top:3px;
-		display: block;
-		font-weight: 600;
-		color: $gray4;
-		font-size: 10px;
-	}
+
 }
 
 @media screen and (min-width: $bp-tablet) {
@@ -250,11 +253,8 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-	width: span(9 of 11);
+
 	margin: 0 auto;
-	@media screen and (max-width: $bp-tablet){
-		width:90%;
-	}
 	.nav-links {
 		border-top: 1px solid $gray6;
 		padding: 30px 0;

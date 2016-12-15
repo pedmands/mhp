@@ -45,12 +45,12 @@
  			</div>
  			<div class="commercial-info">
  				<?php
- 					echo "<h2 class='commercial-title'>";
- 					the_sub_field('title');
- 					echo '</h2>';
           echo "<h1 class='commercial-client'>";
  					the_sub_field('client');
  					echo "</h1>";
+          echo "<h2 class='commercial-title'>";
+ 					the_sub_field('title');
+ 					echo '</h2>';
  				?>
  			</div><!-- .commercial-info -->
  		</div><!-- .commercial -->

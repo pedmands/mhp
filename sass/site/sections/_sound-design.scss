@@ -1,6 +1,5 @@
 .sd {
   .intro{
-    width: span(9);
     margin: 0 auto;
     @media screen and (max-width: $bp-tablet){
       width:95%;
@@ -28,7 +27,6 @@
     }
   }
   .sd-examples {
-    width: 80%;
     margin: 0 auto;
     list-style-type: none;
     @include respond-to(phone){
@@ -39,7 +37,6 @@
     }
     .sd-example {
       position: relative;
-      width: 80%;
       overflow: hidden;
       margin: 0 auto;
       border-top: 1px solid $gray6;
@@ -54,52 +51,37 @@
         vertical-align: middle;
         width: 100px;
         display: inline-block;
-        // @include respond-to(phone){
-        //   position: relative;
-        //   display:block;
-        //   width:100%;
-        // }
+        @include respond-to(phone){width:80px;}
         .img-wrap {
-          position: relative;
-          height: 100px;
-          overflow: hidden;
           display: flex;
           align-items: center;
-          @include respond-to(phone){
-            height:70px;
-            width:70px;
-            display: inline-block;
-          }
+          @include respond-to(phone){ height:80px}
+          position: relative;
+          height: 100px;
+          border: 1px solid $gray7;
           img {
-            border: 1px solid $gray5;
             position: absolute;
-            @include respond-to(phone){
-              max-width: 100%;
-              &.top {top:0; left: 50%; transform: translateX(-50%);}
-              &.center {top:50%; left: 50%; transform: translate(-50%, -50%);}
-              &.bottom {bottom:0; left: 50%; transform: translateX(-50%);}
-            }
-            @media screen and (min-width: $bp-phone + 1){
-              &.top {top:0; left: 50%; transform: translateX(-50%);}
-              &.center {top:50%; left: 50%; transform: translate(-50%, -50%);}
-              &.bottom {bottom:0; left: 50%; transform: translateX(-50%);}
-            }
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 99%;
+            max-height: 118px;
           }// img
         }// img-wrap
-
       }// .thumb
       .content {
-        margin-left: 110px;
+        margin-left: 120px;
         vertical-align: top;
         display: inline-block;
         @include respond-to(phone){
-          margin-left:80px;
+          margin-left:90px;
         }
         @media screen and (min-width: $bp-phone + 1){
           min-height: 100px;
         }
         .ex-title {
           display: inline-block;
+          text-transform: uppercase;
           margin: 0;
           font-weight: 600;
         }// .ex-title
@@ -120,7 +102,7 @@
           flex-wrap: wrap;
           justify-content: flex-start;
           align-items: flex-start;
-          font-weight: 600;
+          font-weight: 400;
           list-style-type: none;
           margin-left: 0;
           font-size: 16px;
@@ -145,7 +127,6 @@
         }// .roles
         .awards-lg {
           font-size:14px;
-          font-style: italic;
           line-height: 1.1 !important;
           margin:0;
           color: $gray3;

@@ -15,7 +15,7 @@
  get_header(); ?>
 
  <div id="primary" class="content-area">
-   <main id="main" class="site-main" role="main">
+   <main id="main" class="site-main mfl" role="main">
    <h1 class="page-title">Music for Listening</h1>
 
        <?php

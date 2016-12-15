@@ -44,27 +44,23 @@
 	}// a
 }// .back
 .page-title {
-  width: 80%;
   color: $gray1;
   margin: 30px auto;
 	margin-top:35px;
   font-size: 32px;
   border-bottom: 1px solid $gray6;
+
 	@media screen and (max-width:$bp-tablet){
-		width:95%;
 		font-size: 26px;
+		max-width: 95%;
 	}
 }
 .page {
  .site-main {padding-bottom:40px;}
 }
 .hentry {
-	width: 80%; // this layout is defined in site/_global.scss
 	margin: 10px auto 20px;
 	@include clearfix;
-	@media screen and (max-width: $bp-tablet){
-		width:95%;
-	}
 }
 
 .entry-title {

@@ -16,6 +16,7 @@
 
  <div id="primary" class="content-area">
  <main id="main" class="site-main rp" role="main">
+   <div class="entry-content">
  	<h1 class="page-title">Radio Production</h1>
 
    <div class="intro">
@@ -72,7 +73,7 @@
 
 
 
-
+</div><!-- entry-content -->
  		</main><!-- #main -->
  	</div><!-- #primary -->
 

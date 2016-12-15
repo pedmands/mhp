@@ -4,12 +4,9 @@
   }
   position: relative;
     ul {
-      width: span(3 of 6);
+      width: 100%;
       @include respond-to(phone){
         display: none;
-      }
-      @include respond-to(tablet){
-        width: span(4 of 6);
       }
       margin: 0 auto;
       padding: 40px 0 20px 0;
@@ -33,10 +30,6 @@
       }
       li {
         padding:5px;
-        @include respond-to(tablet){
-          font-size: 14px;
-          padding: 10px 0;
-        }
         &:first-child,&:nth-child(2),&:nth-child(3){
           text-align: right;
         }
@@ -52,15 +45,14 @@
         &:last-child{
           display: inline-block;
           font-size: 16px;
+          padding:5px 0;
 
         }
+        &:nth-child(6) {padding-left: 5px;}
         &:nth-child(6):after {
           content: "|";
           color: $gray3;
-          margin: 0 5px 0 10px;
-          @include respond-to(tablet){
-            margin-left: 10px;
-          }
+          padding-left:5px;
         }
       }// li
     }// ul

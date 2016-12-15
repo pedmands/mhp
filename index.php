@@ -54,17 +54,19 @@ get_header(); ?>
 					</div>
 				</div><!-- intro-wrap -->
 				<div class="work-wrap">
-				<style>
-			#frontpage-menu li a {
-				background-color: <?php the_field('button_bg','options'); ?>;
-				color: <?php the_field('button_color','options'); ?>;
-			</style>
-					<?php wp_nav_menu( array( 'theme_location' => 'frontpage', 'menu_id' => 'frontpage-menu', 'menu_class' => 'frontpage-menu' ) ); ?>
+
+			<ul id="frontpage-menu">
+			<li><a href="music-for-commercials/"><img src="http://gladdata.design/mark/wp-content/themes/mhp/assets/icons/mfc.png"><span>Music for Commercials</span></a></li>
+			<li><a href="music-for-film/"><img src="http://gladdata.design/mark/wp-content/themes/mhp/assets/icons/mff.png"><span>Music for Film</span></a></li>
+			<li><a href="music-for-listening/"><img src="http://gladdata.design/mark/wp-content/themes/mhp/assets/icons/mfl.png"><span>Music for Listening</span></a></li>
+			<li><a href="sound-design/"><img src="http://gladdata.design/mark/wp-content/themes/mhp/assets/icons/sd.png"><span>Sound Design</span></a></li>
+			<li><a href="radio-production/"><img src="http://gladdata.design/mark/wp-content/themes/mhp/assets/icons/rp.png"><span>Radio Production</span></a></li>
+			</ul>
 				</div><!-- work-wrap -->
 			</section><!-- #welcome -->
 		<?php } ?>
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main front" role="main">
 		<h1 class="fp-title">The Latest</h1>
 		<?php
 		if ( have_posts() ) :

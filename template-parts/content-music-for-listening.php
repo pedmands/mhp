@@ -11,22 +11,22 @@
 
 
 
- <article id="post-<?php the_ID(); ?>" class="hentry mff">
+ <article id="post-<?php the_ID(); ?>" class="hentry">
  	<header class="entry-header">
  		<?php
  			echo '<h1 class="entry-title">' . $title . '</h1>';
  		?>
  	</header><!-- .entry-header -->
  		<div class="entry-content">
- 			<div class="sono-player">
+      <?php
+        the_content();
 
- 			</div>
- 			<div class="description">
- 				<?php echo $description; ?>
- 			</div><!-- .article-shifter -->
+        wp_link_pages( array(
+          'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mhp' ),
+          'after'  => '</div>',
+        ) );
+      ?>
  		</div><!-- .entry-content -->
-    <script>document.addEventListener("DOMContentLoaded", function(event) {
-      window.renderSono(document.querySelector('.sono-player'));
-    });</script>
+
 
  </article><!-- #post-## -->
