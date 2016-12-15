@@ -188,7 +188,7 @@
 	}
 	a[href*='nolink']{
 		cursor: default;
-		&:hover{text-decoration: none;}
+		&:hover,&:focus{text-decoration: none;}
 	}
 }
 .menu-toggle {

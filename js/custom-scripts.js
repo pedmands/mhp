@@ -35,7 +35,7 @@ function scrollToTop() {
 }
 
 // Bullets
-function bullets() {
+setTimeout(function bullets() {
     var lastElement = false;
     $(".roles li").each(function() {
       $(this).removeClass("nobullet");
@@ -44,8 +44,7 @@ function bullets() {
         }
         lastElement = $(this);
     }).last().addClass("nobullet");
-}
-bullets();
+}, 2000)
 
   // Superfish Setup
   var sf = $('.nav-menu'),
