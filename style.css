@@ -530,7 +530,7 @@ a {
       padding-right: 50px; } }
   .main-navigation a {
     font-family: 'Montserrat', sans-serif !important;
-    transition: all .3s ease-out;
+    transition: all .3s;
     font-size: 20px;
     display: block;
     text-decoration: none;
@@ -586,6 +586,10 @@ a {
     background: white; }
   .main-navigation.toggled a:hover {
     text-decoration: underline; }
+  .main-navigation.toggled a[href*='nolink'] {
+    cursor: default; }
+    .main-navigation.toggled a[href*='nolink']:hover {
+      text-decoration: none; }
 
 .menu-toggle {
   position: fixed;
@@ -599,7 +603,7 @@ a {
   padding: 0;
   z-index: 52; }
   .menu-toggle:hover i {
-    color: #1e73be; }
+    color: #999999; }
   .menu-toggle i {
     transition: all .3s ease-in-out;
     font-size: 38px;
@@ -914,13 +918,10 @@ a {
 
 .site-footer {
   position: relative; }
-  @media only screen and (max-width: 500px) {
-    .site-footer {
-      height: 100px; } }
   .site-footer ul {
     width: 100%;
     margin: 0 auto;
-    padding: 40px 0 20px 0;
+    padding: 40px 0;
     -webkit-column-count: 2;
     -moz-column-count: 2;
     -ms-column-count: 2;
@@ -962,11 +963,18 @@ a {
         color: #999999;
         padding-left: 5px; }
   .site-footer .site-info {
-    padding: 20px;
-    width: 90%;
-    margin: 0 auto;
+    text-align: right;
     color: #999999;
-    font-size: 12px; }
+    padding: 20px; }
+  .site-footer .plug {
+    font-size: 12px;
+    text-align: right;
+    padding: 20px;
+    color: #444444; }
+    .site-footer .plug a {
+      color: #666666; }
+      .site-footer .plug a:hover {
+        color: #999999; }
   .site-footer .current_page_item > a,
   .site-footer .current-menu-item > a,
   .site-footer .current_page_ancestor > a,
@@ -1125,12 +1133,20 @@ main.front-page article {
     padding-bottom: 10px; }
     .mff:last-child {
       border-bottom: none; } }
+.mff.hentry {
+  margin: 0; }
 .mff .entry-title {
   font-size: 24px;
   text-transform: uppercase; }
   @media screen and (max-width: 769px) {
     .mff .entry-title {
       margin-top: 10px; } }
+  @media screen and (min-width: 770px) {
+    .mff .entry-title.top-title {
+      display: none; } }
+  @media screen and (max-width: 769px) {
+    .mff .entry-title.right-title {
+      display: none; } }
 .mff .entry-content .media {
   display: inline-block;
   width: 290px; }
@@ -1155,6 +1171,9 @@ main.front-page article {
   width: 490px;
   vertical-align: top;
   margin-left: 20px; }
+  @media screen and (min-width: 770px) and (max-width: 800px) {
+    .mff .entry-content .description {
+      width: 455px; } }
   @media screen and (max-width: 769px) {
     .mff .entry-content .description {
       float: none;

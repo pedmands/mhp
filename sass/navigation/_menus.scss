@@ -118,7 +118,7 @@
 	}
 	a {                              // The big-kahuna a ... master cascader
 		font-family: 'Montserrat', sans-serif !important;
-		transition: all .3s ease-out;
+		transition: all .3s;
 		font-size: 20px;
 		display: block;
 		text-decoration: none;
@@ -186,6 +186,10 @@
 			text-decoration: underline;
 		}
 	}
+	a[href*='nolink']{
+		cursor: default;
+		&:hover{text-decoration: none;}
+	}
 }
 .menu-toggle {
 	position: fixed;
@@ -200,7 +204,7 @@
 	z-index:52;
 	&:hover {
 		i{
-			color:#1e73be;
+			color:$gray3;
 		}
 
 	}

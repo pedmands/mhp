@@ -1,15 +1,10 @@
 .site-footer {
-  @include respond-to(phone){
-    height:100px;
-  }
+
   position: relative;
     ul {
       width: 100%;
-      @include respond-to(phone){
-        display: none;
-      }
       margin: 0 auto;
-      padding: 40px 0 20px 0;
+      padding: 40px 0;
       -webkit-column-count: 2;
       -moz-column-count: 2;
       -ms-column-count: 2;
@@ -21,6 +16,9 @@
       -o-column-gap: 20px;
       column-gap: 20px;
       list-style-type: none;
+      @include respond-to(phone){
+        display: none;
+      }
       @include respond-to(tablet){
         -webkit-column-gap: 25px;
         -moz-column-gap: 25px;
@@ -57,11 +55,21 @@
       }// li
     }// ul
     .site-info {
-      padding:20px;
-      width:90%;
-      margin: 0 auto;
+      text-align: right;
       color: $gray3;
+      padding: 20px;
+    }
+    .plug {
       font-size: 12px;
+      text-align: right;
+      padding:20px;
+      color: $gray1;
+      a {
+        color: $gray2;
+        &:hover {
+          color: $gray3;
+        }
+      }
     }
     .current_page_item > a,
     .current-menu-item > a,

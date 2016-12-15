@@ -19,11 +19,24 @@
       border-bottom: none;
     }
   }
+  &.hentry {
+    margin: 0;
+  }
   .entry-title {
     font-size: 24px;
     text-transform: uppercase;
     @media screen and (max-width: $bp-tablet){
       margin-top: 10px;
+    }
+    &.top-title {
+      @media screen and (min-width: $bp-tablet+1){
+        display: none;
+      }
+    }// top-title
+    &.right-title {
+      @media screen and (max-width: $bp-tablet){
+        display: none;
+      }
     }
   }
   .entry-content {
@@ -54,8 +67,8 @@
       width: 490px;
       vertical-align: top;
       margin-left:20px;
-      p {
-
+      @media screen and (min-width: $bp-tablet+1) and (max-width: 800px){
+        width:455px;
       }
       @media screen and (max-width: $bp-tablet){
         float:none;

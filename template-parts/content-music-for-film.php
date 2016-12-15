@@ -18,6 +18,7 @@
  		?>
  <article id="post-<?php the_ID(); ?>" class="hentry mff">
  		<div class="entry-content">
+      <?php echo '<h1 class="entry-title top-title">' . $title . '</h1>'; ?>
  			<div class="media">
  				<?php
         if ($title === 'Serial'){
@@ -54,7 +55,7 @@
  				?>
  			</div>
  			<div class="description">
-      <?php echo '<h1 class="entry-title">' . $title . '</h1>'; ?>
+      <?php echo '<h1 class="entry-title right-title">' . $title . '</h1>'; ?>
  				<?php echo $description; ?>
  			</div><!-- .article-shifter -->
  		</div><!-- .entry-content -->
