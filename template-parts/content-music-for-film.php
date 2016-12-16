@@ -27,7 +27,7 @@
           echo '<div class="strays-player"></div>';
         } else if ($title === 'Bayard and Me') {
           echo '<div class="bayard-player"></div>';
-        } else if (get_sub_field('video')) {
+        } else {
  					// get iframe HTML
  					$iframe = $video;
  					// use preg_match to find iframe src

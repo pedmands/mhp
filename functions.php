@@ -80,12 +80,6 @@ function mhp_setup() {
 			'menu_title'	=> 'Landing Page',
 			'parent_slug'	=> 'theme-general-settings',
 		));
-
-		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Footer Settings',
-			'menu_title'	=> 'Footer',
-			'parent_slug'	=> 'theme-general-settings',
-		));
 	}
 
 	// HEX to RGB converter

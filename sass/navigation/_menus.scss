@@ -23,7 +23,7 @@
 		}// ul menu-item-has-children
 		ul {
 			z-index: 100;
-			background: $gray7;
+			background: $gray6; //sub-menu bg
 			@media screen and (min-width: $bp-tablet +1){
 				float: left;
 				position: absolute;
@@ -58,7 +58,7 @@
 			}// ul ul ul
 
 			li {
-				width:100%;
+				width:250px;
 				&:hover > ul,
 				&.focus > ul {
 					transition: all .3s ease-out;
@@ -71,18 +71,23 @@
 					background:$gray6;
 				}
 				a {
+					font-family: 'futura-pt', sans-serif;   //sub-menu links
 					width: 100%;
+					font-size: 20px;
+					padding:20px 30px;
+					color: $gray2;
+					letter-spacing: .5px;
 				}
 			}// ul ul li
 
 			@media screen and (min-width: $bp-tablet){
 				:hover > a,
 				.focus > a {
-					background: $gray5;
+					background: $gray7;
 				}
 				a:hover,
 				a.focus {
-					background: $gray5;
+					background: $gray7;
 				}
 			}
 		}//ul ul
@@ -98,7 +103,7 @@
 		&:hover > a,
 		&.focus > a {
 			@media screen and (min-width: $bp-tablet){
-				background: $gray7;
+				background: $gray6;
 			}
 		}
 		@media screen and (max-width: $bp-tablet){
@@ -113,11 +118,11 @@
 			padding-right: 50px;
 		}
 	}
-	.menu-item-has-children li a {
-
+	.menu-item-has-children > ul a {
+		padding-right: 0;
 	}
 	a {                              // The big-kahuna a ... master cascader
-		font-family: 'Montserrat', sans-serif !important;
+		font-family: 'Montserrat', sans-serif;
 		transition: all .3s;
 		font-size: 20px;
 		display: block;
@@ -133,8 +138,8 @@
 .current-menu-item > a,
 .current_page_ancestor > a,
 .current-menu-ancestor > a {
-					color: $red;
-					font-weight: 700;
+					color: $red !important;
+
 
 }
 #secondary-menu {

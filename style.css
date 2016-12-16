@@ -461,7 +461,7 @@ a {
         font-size: 14px; }
     .main-navigation ul ul {
       z-index: 100;
-      background: #eeeeee; }
+      background: #dddddd; }
       @media screen and (min-width: 770px) {
         .main-navigation ul ul {
           float: left;
@@ -490,7 +490,7 @@ a {
           .main-navigation ul ul ul a.focus {
             background: #cccccc; } }
       .main-navigation ul ul li {
-        width: 100%; }
+        width: 250px; }
         .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
           transition: all .3s ease-out;
           left: 100%; }
@@ -501,14 +501,19 @@ a {
             float: none;
             background: #dddddd; } }
         .main-navigation ul ul li a {
-          width: 100%; }
+          font-family: 'futura-pt', sans-serif;
+          width: 100%;
+          font-size: 20px;
+          padding: 20px 30px;
+          color: #666666;
+          letter-spacing: .5px; }
       @media screen and (min-width: 769px) {
         .main-navigation ul ul :hover > a,
         .main-navigation ul ul .focus > a {
-          background: #cccccc; }
+          background: #eeeeee; }
         .main-navigation ul ul a:hover,
         .main-navigation ul ul a.focus {
-          background: #cccccc; } }
+          background: #eeeeee; } }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
@@ -516,7 +521,7 @@ a {
     float: left; }
     @media screen and (min-width: 769px) {
       .main-navigation li:hover > a, .main-navigation li.focus > a {
-        background: #eeeeee; } }
+        background: #dddddd; } }
     @media screen and (max-width: 769px) {
       .main-navigation li {
         display: block;
@@ -528,8 +533,10 @@ a {
   @media screen and (min-width: 769px) {
     .main-navigation .menu-item-has-children a {
       padding-right: 50px; } }
+  .main-navigation .menu-item-has-children > ul a {
+    padding-right: 0; }
   .main-navigation a {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
     transition: all .3s;
     font-size: 20px;
     display: block;
@@ -543,8 +550,7 @@ a {
 .current-menu-item > a,
 .current_page_ancestor > a,
 .current-menu-ancestor > a {
-  color: #EA202D;
-  font-weight: 700; }
+  color: #EA202D !important; }
 
 @media screen and (min-width: 770px) and (max-width: 960px) {
   #secondary-menu {
