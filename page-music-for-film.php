@@ -34,7 +34,19 @@
 
    </main><!-- #main -->
  </div><!-- #primary -->
-
+ <script>document.addEventListener("DOMContentLoaded", function(event) {
+   window.renderSerial(document.querySelector('.serial-player'));
+   window.renderStrays(document.querySelector('.strays-player'));
+   window.renderBayard(document.querySelector('.bayard-player'));
+   window.renderGreenwood(document.querySelector('.greenwood-player'));
+   window.renderZeno(document.querySelector('.zeno-player'));
+   window.renderProphet(document.querySelector('.prophet-player'));
+   window.renderKingswood(document.querySelector('.kingswood-player'));
+   window.renderGuardian(document.querySelector('.guardian-player'));
+   window.renderHold(document.querySelector('.hold-player'));
+   window.renderSecret(document.querySelector('.secret-player'));
+   window.renderStories(document.querySelector('.stories-player'));
+ });</script>
  <?php
  get_sidebar();
  get_footer();

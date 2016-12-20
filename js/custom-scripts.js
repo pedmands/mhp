@@ -68,8 +68,15 @@ setTimeout(function bullets() {
       } else if($(document).width() < bp) {
           sf.superfish('destroy');
       }
+			var lastElement = false;
+			$(".roles li").each(function() {
+				$(this).removeClass("nobullet");
+					if (lastElement && lastElement.offset().top != $(this).offset().top) {
+							$(lastElement).addClass("nobullet");
+					}
+					lastElement = $(this);
+			}).last().addClass("nobullet");
 
-    bullets();
   });
 
 

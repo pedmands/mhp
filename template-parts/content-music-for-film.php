@@ -27,6 +27,22 @@
           echo '<div class="strays-player"></div>';
         } else if ($title === 'Bayard and Me') {
           echo '<div class="bayard-player"></div>';
+        } else if ($title === 'Greenwood') {
+          echo '<div class="greenwood-player"></div>';
+        } else if ($title === 'The Zeno Question') {
+          echo '<div class="zeno-player"></div>';
+        } else if ($title === "Prophet's Prey") {
+          echo '<div class="prophet-player"></div>';
+        } else if ($title === 'Kingswood') {
+          echo '<div class="kingswood-player"></div>';
+        } else if ($title === 'Playing Politics (The Guardian)') {
+          echo '<div class="guardian-player"></div>';
+        } else if ($title === 'Hold On') {
+          echo '<div class="hold-player"></div>';
+        } else if ($title === 'An Open Secret') {
+          echo '<div class="secret-player"></div>';
+        } else if ($title === 'Stories Of The Mind') {
+          echo '<div class="stories-player"></div>';
         } else {
  					// get iframe HTML
  					$iframe = $video;
@@ -60,11 +76,7 @@
  			</div><!-- .article-shifter -->
  		</div><!-- .entry-content -->
 
-    <script>document.addEventListener("DOMContentLoaded", function(event) {
-      window.renderSerial(document.querySelector('.serial-player'));
-      window.renderStrays(document.querySelector('.strays-player'));
-      window.renderBayard(document.querySelector('.bayard-player'));
-    });</script>
+  
  </article><!-- #post-## -->
  <?php endwhile; ?>
  <?php endif; ?>

@@ -1,7 +1,15 @@
 .serial-player,
 .strays-player,
 .bayard-player,
-.sono-player {
+.greenwood-player,
+.zeno-player,
+.prophet-player,
+.kingswood-player,
+.guardian-player,
+.hold-player,
+.secret-player,
+.stories-player,
+ {
   width: 100%;
   border: 1px solid #ccc;
   background-color: #fff;
@@ -25,18 +33,55 @@
     background: url('http://gladdata.design/mark/wp-content/uploads/2016/12/artworks-000197352831-y3n24s-t500x500-e1481316664537.jpg');
   }
 }
-.sono-player {
-  margin: 0 auto;
-  @media screen and (max-width: $bp-tablet){
-    width: 320px;
-  }
-  @media screen and (min-width: $bp-tablet+1){
-    width: 500px;
-  }
+
+.greenwood-player {
   .cover {
-    background: url('https://i1.sndcdn.com/artworks-000195712967-q8hw53-t500x500.jpg');
+    background: url('https://i1.sndcdn.com/artworks-000197678545-ohxw1v-t500x500.jpg');
   }
 }
+
+.zeno-player {
+  .cover {
+    background: url('https://i1.sndcdn.com/artworks-000197455350-pvoghj-t500x500.jpg');
+  }
+}
+
+.prophet-player {
+  .cover {
+    background: url('https://i1.sndcdn.com/artworks-000198644003-avpto8-t500x500.jpg');
+  }
+}
+
+.kingswood-player {
+  .cover {
+    background: url('https://i1.sndcdn.com/artworks-000089881206-3qq19i-t500x500.jpg');
+  }
+}
+
+.guardian-player {
+  .cover {
+    background: url('https://i1.sndcdn.com/artworks-000199091615-srldcx-t500x500.jpg');
+  }
+}
+
+.hold-player {
+  .cover {
+    background: url('https://i1.sndcdn.com/artworks-000089879885-v45qr8-t500x500.jpg');
+  }
+}
+
+.secret-player {
+  .cover {
+    background: url('https://i1.sndcdn.com/avatars-000114225239-ovj9lj-t500x500.jpg');
+  }
+}
+
+.stories-player {
+  .cover {
+    background: url('https://i1.sndcdn.com/artworks-000089891749-tdcxof-t500x500.jpg');
+  }
+}
+
 .cover {
   display: flex;
   height:150px;
