@@ -34,7 +34,7 @@
 
    </main><!-- #main -->
  </div><!-- #primary -->
- <script>document.addEventListener("DOMContentLoaded", function(event) {
+ <!-- <script>document.addEventListener("DOMContentLoaded", function(event) {
    window.renderSerial(document.querySelector('.serial-player'));
    window.renderStrays(document.querySelector('.strays-player'));
    window.renderBayard(document.querySelector('.bayard-player'));
@@ -46,7 +46,7 @@
    window.renderHold(document.querySelector('.hold-player'));
    window.renderSecret(document.querySelector('.secret-player'));
    window.renderStories(document.querySelector('.stories-player'));
- });</script>
+ });</script> -->
  <?php
  get_sidebar();
  get_footer();

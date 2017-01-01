@@ -13,9 +13,7 @@
  	<?php while( have_rows('film_examples') ): the_row();
  		$title = get_sub_field('title');
  		$roles = get_sub_field('roles');
-    $videoAudio = get_sub_field('video-or-playlist');
- 		$videoURL = get_sub_field('video_url');
-    $audioURL = get_sub_field('soundcloud_url');
+ 		$video = get_sub_field('video_url');
  		$description = get_sub_field('description');
  		?>
  <article id="post-<?php the_ID(); ?>" class="hentry mff">
@@ -23,9 +21,31 @@
       <?php echo '<h1 class="entry-title top-title">' . $title . '</h1>'; ?>
  			<div class="media">
  				<?php
-        if ($videoAudio === 'video') {
+        if ($title === 'Serial'){
+          echo '<div class="serial-player"></div>';
+        } else if ($title === 'Strays') {
+          echo '<div class="strays-player"></div>';
+        } else if ($title === 'Bayard and Me') {
+          echo '<div class="bayard-player"></div>';
+        } else if ($title === 'Greenwood') {
+          echo '<div class="greenwood-player"></div>';
+        } else if ($title === 'The Zeno Question') {
+          echo '<div class="zeno-player"></div>';
+        } else if ($title === "Prophet's Prey") {
+          echo '<div class="prophet-player"></div>';
+        } else if ($title === 'Kingswood') {
+          echo '<div class="kingswood-player"></div>';
+        } else if ($title === 'Playing Politics (The Guardian)') {
+          echo '<div class="guardian-player"></div>';
+        } else if ($title === 'Hold On') {
+          echo '<div class="hold-player"></div>';
+        } else if ($title === 'An Open Secret') {
+          echo '<div class="secret-player"></div>';
+        } else if ($title === 'Stories Of The Mind') {
+          echo '<div class="stories-player"></div>';
+        } else {
  					// get iframe HTML
- 					$iframe = $videoURL;
+ 					$iframe = $video;
  					// use preg_match to find iframe src
  					preg_match('/src="(.+?)"/', $iframe, $matches);
  					$src = $matches[1];
@@ -46,9 +66,8 @@
  					$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
  					// echo $iframe
  					echo $iframe;
-        } else {
-          echo '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=' . $audioURL . '&amp;auto_play=false&amp;visual=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>';
-        }
+
+ 				}
  				?>
  			</div>
  			<div class="description">
