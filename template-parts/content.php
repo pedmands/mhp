@@ -16,12 +16,7 @@
 <header class="entry-header">
 	<?php	the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 </header><!-- .entry-header -->
-	<?php
-	if (has_post_thumbnail()) : ?>
-	<div class="serial-wrap">
-		<div class="fp-serial-player"></div>
-	<?php
-	endif; ?>
+
 
 
 <?php if( has_excerpt() && !is_single()){?>
@@ -55,9 +50,6 @@
 		</div><!-- .entry-content -->
 	<?php } ?>
 
-	<?php if (has_post_thumbnail()) : ?>
-		</div> <!-- serial-wrap -->
-	<?php endif; ?>
 
 	<script>document.addEventListener("DOMContentLoaded", function(event) {
 		window.renderSerial(document.querySelector('.fp-serial-player'));
