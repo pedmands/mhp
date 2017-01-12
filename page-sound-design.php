@@ -47,7 +47,7 @@
             echo '<li>' . $role . '</li>';
           }; ?>
           </ul>
-          <p class="awards-lg"><?php the_sub_field('awards'); ?></p>
+          <span class="awards-lg"><?php the_sub_field('awards'); ?></span>
         </div> <!-- content -->
   		</li>
   	<?php endwhile; ?>

@@ -146,7 +146,7 @@ add_action( 'widgets_init', 'mhp_widgets_init' );
 function mhp_scripts() {
 	wp_enqueue_style('mhp-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
 
-	wp_enqueue_style( 'mhp-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'mhp-style-Jan042016', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'mhp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
